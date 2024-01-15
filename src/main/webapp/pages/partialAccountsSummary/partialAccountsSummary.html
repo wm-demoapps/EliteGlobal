@@ -1,0 +1,91 @@
+<wm-partial name="partial1">
+    <wm-container name="container3" class="panel no-border" overflow="hidden">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow8">
+                <wm-gridcolumn columnwidth="7" name="gridcolumn14">
+                    <wm-layoutgrid name="layoutgrid5">
+                        <wm-gridrow name="gridrow9">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn18">
+                                <wm-container name="containerAccountsSummary" class="panel bg-primary-2" padding="24px 20px" height="222">
+                                    <wm-layoutgrid name="layoutgrid3">
+                                        <wm-gridrow name="gridrow5">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn10">
+                                                <wm-picture resizemode="contain" name="picture1" width="30" height="30" picturesource="resources/images/imagelists/toyota-white.svg"></wm-picture>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn11" horizontalalign="right">
+                                                <wm-container name="container7" display="inline-block">
+                                                    <wm-select name="select1" dataset="USD,INR,EUR" datafield="All Fields" datavalue="USD" class="currency-select"></wm-select>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow6">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                                <wm-label padding="unset" name="label2" caption="bind:Variables.svGetCorporate.dataSet.name" class="font-h3 font-medium text-white text-uppercase" margin="20px unset 8px unset"></wm-label>
+                                                <wm-label padding="unset" name="label3" class="h6 text-white" caption="bind:Variables.svGetAccountsCount.dataSet.value > 0 ? (Variables.svGetAccountsCount.dataSet.value + &quot; Accounts&quot;) : &quot;0 Accounts&quot;"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow6_1">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn10_1" horizontalalign="center">
+                                                <wm-button class="btn-outline btn-block" caption="USA" type="button" margin="40px unset unset unset" name="button2"></wm-button>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn19" padding="10px 35px 10px 18px" class="top-lg b-dash-sepration">
+                                <wm-layoutgrid name="layoutgrid2">
+                                    <wm-gridrow name="gridrow3">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn6" padding="8px unset">
+                                            <wm-container name="container4" class="panel no-border" backgroundcolor="rgba(245, 245, 245, 1)" padding="18px">
+                                                <wm-label padding="unset" name="label4" class="h2" caption="bind:Variables.svGetTotalBalance.dataSet.totalBalance | toCurrency: '$'"></wm-label>
+                                                <wm-label padding="unset" class="h4 text-muted" name="label5" caption="Overall Balance" margin="8px unset unset unset"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow4">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn8" padding="8px unset">
+                                            <wm-container name="container5" backgroundcolor="rgba(245, 245, 245, 1)" class="panel no-border" padding="18px">
+                                                <wm-label padding="unset" class="h2" name="label6" caption="bind:Variables.dbGetCorporateSummary.firstRecord.availableLimit | toCurrency: '$'"></wm-label>
+                                                <wm-label padding="unset" class="h4 text-muted" name="label7" caption="Available Limit" margin="8px unset unset unset"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="5" name="gridcolumn15_1" padding="18px unset 6px unset">
+                    <wm-layoutgrid name="layoutgrid6">
+                        <wm-gridrow name="gridrow11">
+                            <wm-gridcolumn columnwidth="5" name="gridcolumn22" padding="unset unset 12px unset">
+
+                                <wm-chart type="Donut" title="" height="180px" iconclass="" name="chart1" dataset="bind:Variables.dbGetAccountsForCorporate.dataSet" xaxisdatakey="accountType.type" yaxisdatakey="netBalance" aggregationcolumn="netBalance" groupby="accountType.type" aggregation="sum"
+                                    showlabels="hide" labeltype="value" ynumberformat="Million" showlegend="hide" offsettop="0" donutratio="0.7" customcolors="var(--brand-danger),var(--brand-info),var(--brand-success),var(--brand-warning),var(--brand-primary)"></wm-chart>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="7" name="gridcolumn23" padding="unset unset unset 12px">
+                                <wm-list listclass="list-group" itemclass="list-group-item no-border p-0" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" dataset="bind:Variables.svGetAccountsSummaryByType.dataSet"
+                                    navigation="None" name="listAccountsSummaryByType">
+                                    <wm-listtemplate layout="inline" name="listtemplate1">
+                                        <wm-container name="container6" class="media-left" padding="unset unset 12px unset">
+                                            <wm-icon name="icon2" iconclass="fa fa-circle" iconsize="8px" conditionalclass="bind:
+{'text-danger': Widgets.listAccountsSummaryByType.currentItem.type == 'CASA', 
+    'text-info': Widgets.listAccountsSummaryByType.currentItem.type == 'Virtual Account',
+    'text-success': Widgets.listAccountsSummaryByType.currentItem.type == 'FD Summary',
+    'text-warning': Widgets.listAccountsSummaryByType.currentItem.type == 'MF Summary',
+    'text-primary': Widgets.listAccountsSummaryByType.currentItem.type == 'External Account Summary'}"></wm-icon>
+                                        </wm-container>
+                                        <wm-container class="media-body" name="container2" padding="unset unset 12px unset">
+                                            <wm-label padding="unset" name="label8" caption="bind:Widgets.listAccountsSummaryByType.currentItem.type + ' ' + Widgets.listAccountsSummaryByType.currentItem.totalAccounts + ' Accounts ' + (Widgets.listAccountsSummaryByType.currentItem.netBalance | toCurrency: '$')"
+                                                fontsize="12" class="text-muted"></wm-label>
+                                        </wm-container>
+                                    </wm-listtemplate>
+                                </wm-list>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+</wm-partial>

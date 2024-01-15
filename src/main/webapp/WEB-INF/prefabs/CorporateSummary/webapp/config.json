@@ -1,0 +1,22 @@
+{
+  "displayName" : "CorporateSummary",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "corporateid" : {
+      "type" : "number",
+      "displayName" : "Corporate Id",
+      "description" : "Corporate Id",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : { },
+  "methods" : { }
+}

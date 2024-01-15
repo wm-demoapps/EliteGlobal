@@ -1,0 +1,33 @@
+[ {
+  "name" : "CorporateSummary",
+  "version" : "1.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "Credit_Line_Details",
+  "version" : "1.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "Rapid_pay",
+  "version" : "1.0.0",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "TransactionCalendar",
+  "version" : "1.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+} ]

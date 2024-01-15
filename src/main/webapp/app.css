@@ -1,0 +1,522 @@
+.wm-app .p-0 {
+    padding: 0 !important;
+}
+
+.wm-app .panel .panel.box-shadow {
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.125);
+}
+
+.wm-app .form-inline .form-control {
+    padding: 0 14px;
+}
+
+.wm-app .app-left-panel .nav li a .app-icon {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.wm-app .flexible-layout {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.wm-app .flexible-layout>* {
+    padding: 10px;
+}
+
+.wm-app .flexible-layout.col-3>* {
+    min-width: 33.33%;
+    max-width: 33.33%;
+}
+
+.wm-app .flexible-layout.col-1>* {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.wm-app .flexible-layout.col-2>* {
+    min-width: 50%;
+    max-width: 50%;
+}
+
+.wm-app .app-left-panel .nav li a.active {
+    background-color: var(--brand-primary);
+    color: var(--text-white);
+}
+
+.wm-app .app-tabs.no-bg .nav-tabs>li.active>a {
+    border-color: transparent;
+    color: var(--text-white);
+    background: var(--brand-primary);
+}
+
+.wm-app .app-tabs.no-bg .tab-content {
+    background: transparent;
+}
+
+.wm-app .app-tabs.no-bg .nav-tabs {
+    margin-bottom: 12px;
+    background-color: var(--bg-white);
+    border-radius: var(--base-radius);
+    border: none;
+    box-shadow: none;
+}
+
+.wm-app .app-tabs.no-bg .nav-tabs>li {
+    margin: 4px 12px 4px 4px;
+}
+
+.wm-app .app-tabs.no-bg .nav-tabs>li a {
+    margin: 0;
+    border-radius: var(--base-radius);
+    border-color: var(--text-muted-light-color);
+    padding: 8px;
+    color: var(--text-muted-bold-color);
+    font-size: var(--h5);
+}
+
+.wm-app .app-tabs.no-bg .nav-tabs>li a:hover,
+.wm-app .app-tabs.no-bg .nav-tabs>li a:focus,
+.wm-app .app-tabs.no-bg .nav-tabs>li a.active {
+    color: var(--text-white);
+}
+
+.wm-app .app-tabs.no-bg .nav-tabs>li.active>a:after {
+    display: none;
+}
+
+.wm-app .app-tabs.no-bg .tab-content .tab-body {
+    padding: 0;
+}
+
+.summer-bg {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.header-select.app-select.form-control {
+    border: none;
+    font-family: 'Roboto-Bold';
+    font-size: var(--h3);
+    width: auto !important;
+    height: auto;
+    padding: 0;
+}
+
+.currency-select.app-select.form-control {
+    background: var(--brand-primary);
+    border: none;
+    width: auto !important;
+    color: var(--text-white);
+    font-family: 'Roboto-Medium';
+    font-size: 13px;
+    height: auto;
+    padding: 8px 6px;
+}
+
+.text-seperator {
+    font-size: var(--h3);
+    color: var(--text-muted-light-color);
+    margin: 0 6px;
+}
+
+.b-dash-sepration:after {
+    content: "";
+    height: 57px;
+    width: 0;
+    border: 1px dashed rgb(34 34 34 / 20%);
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 22px;
+}
+
+.border-sep-left:before {
+    content: "";
+    height: 57px;
+    width: 0;
+    border: 1px dashed rgb(34 34 34 / 20%);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0px;
+}
+
+.border-sep-right:after {
+    content: "";
+    height: 57px;
+    width: 0;
+    border: 1px dashed rgb(34 34 34 / 20%);
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+
+.top-lg.b-dash-sepration:after {
+    top: 82px;
+}
+
+.wm-app .checkbox {
+    margin: 0;
+}
+
+.app-container.border-right-container:after {
+    content: "";
+    height: 70%;
+    width: 1px;
+    background: var(--text-muted-light-color);
+    position: relative;
+    top: 5px;
+    margin: 0 2px;
+    border: 1px solid var(--text-muted-light-color);
+}
+
+.app-toggle.checkbox label {
+    background-color: var(--brand-primary);
+}
+
+.event-list .app-livelist-container .app-list-item {
+    padding: 16px;
+    border: 1px solid #ECECEC;
+    margin: 6px 0;
+    border-radius: 8px;
+}
+
+.event-list .app-livelist-container {
+    height: 94px;
+    overflow: auto;
+}
+
+.app-livelist .app-list-item.active.list-group-item .app-label {
+    opacity: 1;
+}
+
+
+/*rapid pay*/
+
+.wm-app .app-dialog .form-action .btn,
+.app-dialog-footer .btn {
+    /* margin: 0 0.333em; */
+    border-radius: 4px;
+    height: 34px;
+    font-size: 12px;
+    font-family: 'Roboto-Medium';
+    font-weight: normal;
+}
+
+.wm-app .live-field .app-search {
+    width: 100%;
+}
+
+.wm-app .app-form .form-action,
+.wm-app .app-liveform .form-action {
+    border-width: 0;
+}
+
+.wm-app .rapid-pay-form.app-form .panel-body .app-grid-layout {
+    padding: var(--space-2xl);
+}
+
+.wm-app .breadcrumb i {
+    font-size: var(--h4);
+}
+
+.rapid-pay-form .panel-body .form-elements {
+    height: 320px;
+}
+
+.wm-app .breadcrumb>li {
+    /*display: inline-flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    font-size: var(--h5);
+}
+
+.wm-app .breadcrumb>.active label {
+    text-decoration: underline;
+}
+
+.wm-app .breadcrumb label {
+    margin-left: 5px;
+}
+
+.app-grid.app-panel .panel-heading {
+    padding: 16px 24px;
+}
+
+.app-grid.app-panel .panel-heading .panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-grid.app-panel .panel-heading .panel-title .pull-left:first-child {
+    display: none;
+}
+
+.app-grid .form-search .app-search-button {
+    width: 40px;
+    height: 40px;
+    padding: 16px;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-primary);
+    color: var(--text-white);
+    border-radius: 2px;
+    margin: 0 6px;
+}
+
+.app-grid .form-search .app-search-button:hover,
+.app-grid .form-search .app-search-button:active,
+.app-grid .form-search .app-search-button:focus {
+    color: var(--text-white);
+    background: var(--btn-default-hover);
+}
+
+.wm-app .form-inline .form-control {
+    height: 40px;
+    border-radius: 0;
+}
+
+.wm-app .form-inline .form-group {
+    margin-right: 12px;
+}
+
+.app-grid .form-search {
+    padding: 10px 20px;
+}
+
+.wm-app .app-grid .input-group-addon {
+    padding: 0;
+}
+
+.wm-app .app-composite-widget.caption-floating .control-label,
+.wm-app .app-composite-widget.caption-floating.float-active .control-label {
+    color: var(--text-light-color);
+    font-weight: normal;
+    font-size: var(--h5);
+    font-family: var(--font-family-base);
+    line-height: normal;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+.wm-app .app-composite-widget.caption-floating {
+    margin-top: 10px;
+}
+
+.wm-app .form-group {
+    margin-bottom: 10px;
+}
+
+.caption-floating .form-control {
+    padding: 0px;
+    height: auto;
+}
+
+.app-popover .app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/*setting*/
+
+.wm-app .setting-list .list-group-item.active,
+.wm-app .setting-list .list-group-item.active:hover,
+.wm-app .setting-list .list-group-item.active:focus {
+    z-index: 2;
+    color: var(--text-bold-color);
+    background-color: var(--bg-white);
+    border-color: var(--border-light-color);
+}
+
+.app-livelist li.app-list-item:focus:not(.active):not(.disable-item) {
+    background-color: #fff;
+}
+
+.setting-list.app-livelist .list-group {
+    margin: 0 -10px;
+}
+
+.setting-list.app-livelist li.app-list-item {
+    border-radius: 12px !important;
+    margin: 10px;
+    width: max(calc(33.33% - 20px));
+}
+
+
+/*widget form*/
+
+.wm-app .app-liveform .form-control {
+    border-radius: var(--base-radius);
+}
+
+.app-date.input-group {
+    border: 1px solid var(--border-light-color);
+    max-width: 100%;
+    border-radius: var(--base-radius);
+}
+
+.app-date.input-group .form-control.app-dateinput {
+    border: 1px solid transparent;
+}
+
+.wm-app .app-date.input-group .input-group-btn {
+    position: absolute;
+    right: 0;
+    width: auto;
+}
+
+.wm-app .app-date.input-group .input-group-btn .btn {
+    height: var(--input-height);
+    border: none !important;
+}
+
+.wm-app .app-currency .input-group-addon {
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: var(--h3);
+    font-family: var(--font-family-medium);
+    /* padding: 10px 20px; */
+}
+
+.wm-app .app-liveform .app-currency .input-group-addon {
+    border: 1px solid var(--border-light-color);
+    width: 40px;
+    border-width: 1px 0 1px 1px;
+}
+
+.form-group .form-control-static+.input-group {
+    display: flex;
+    alignt-items: center;
+}
+
+.app-wizard-actions .btn .app-icon {
+    display: none;
+}
+
+.app-dialog-body .panel {
+    box-shadow: none;
+}
+
+.bs-datepicker-buttons {
+    border: 1px solid var(--border-light-color);
+    border-width: 0px 1px 1px 1px;
+}
+
+.bs-datepicker-buttons .btn {
+    padding: 5px 10px;
+    font-size: var(--h6);
+}
+
+.app-date .bs-datepicker-head {
+    background-color: var(--brand-primary);
+    color: var(--text-white);
+}
+
+.app-wizard.number .app-wizard-actions {
+    border-radius: 0px;
+    background: transparent;
+}
+
+.app-liveform.quick-pay-form .panel-heading {
+    padding: 15px 20px;
+}
+
+.app-liveform.quick-pay-form .panel-body .app-grid-layout {
+    padding: 0 20px 15px 20px;
+}
+
+.app-liveform.quick-pay-form .panel-body .app-grid-layout .form-control {
+    height: auto;
+    padding: 0;
+}
+
+.app-wizard.number .app-wizard-body {
+    min-height: 420px;
+}
+
+
+/* width */
+
+.event-list .app-livelist-container::-webkit-scrollbar {
+    width: 5px;
+    height: 4px;
+}
+
+
+/* Track */
+
+.event-list .app-livelist-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+.event-list .app-livelist-container::-webkit-scrollbar-thumb {
+    background: var(--brand-primary);
+    border-radius: var(--base-radius);
+}
+
+
+/* Handle on hover */
+
+.event-list .app-livelist-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.wm-app .app-livelist.themes .list-group {
+    margin: 0 -10px;
+}
+
+.wm-app .app-livelist.themes .list-group .app-list-item {
+    margin: 10px;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #222222;
+    padding: 28px 10px 26px;
+    width: max(calc(25% - 22px), 120px);
+    border: none;
+    box-shadow: inset 0 0 0 1px #ddd;
+    cursor: pointer;
+}
+
+.wm-app .app-livelist.themes .list-group .app-list-item * {
+    cursor: pointer;
+}
+
+.wm-app .app-livelist.themes .list-group .app-list-item.active:before {
+    content: "\f1cf";
+    font-family: wavicon;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    color: #fff;
+}
+
+.wm-app .app-livelist.themes .list-group .app-list-item.active {
+    box-shadow: inset 0 0 0 2px var(--brand-primary);
+    color: var(--brand-primary);
+}

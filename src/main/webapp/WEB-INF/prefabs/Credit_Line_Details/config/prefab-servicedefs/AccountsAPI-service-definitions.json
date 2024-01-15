@@ -1,0 +1,676 @@
+{
+  "AccountsAPI_CreditLineDetailsController_patchCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_patchCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.CreditLineDetails",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_patchCreditLineDetails",
+      "methodType" : "patch",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/{id}",
+      "directPath" : null,
+      "httpMethod" : "patch",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "CreditLineDetails",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.CreditLineDetails",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.credit_line_details.AccountsAPI.CreditLineDetails" : [ {
+          "name" : "expectedCredit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "actualCredit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "month",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_getCreditLineDetailsAggregatedValues" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_getCreditLineDetailsAggregatedValues",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_getCreditLineDetailsAggregatedValues",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/aggregations",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "AggregationInfo",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.model.AggregationInfo",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.credit_line_details.AccountsAPI.AggregationInfo" : [ {
+          "name" : "filter",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "groupByFields",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.util.List",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "aggregations",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.util.List",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_searchCreditLineDetailsByQueryFilters" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_searchCreditLineDetailsByQueryFilters",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_searchCreditLineDetailsByQueryFilters",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/search",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "QueryFilter",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.expression.QueryFilter",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.credit_line_details.AccountsAPI.QueryFilter" : [ {
+          "name" : "attributeType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "attributeName",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "attributeValue",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.credit_line_details.AccountsAPI.Object",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "filterCondition",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_editCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_editCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : "update",
+    "type" : "com.elite.credit_line_details.AccountsAPI.CreditLineDetails",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_editCreditLineDetails",
+      "methodType" : "put",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/{id}",
+      "directPath" : null,
+      "httpMethod" : "put",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "CreditLineDetails",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.CreditLineDetails",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.credit_line_details.AccountsAPI.CreditLineDetails" : [ {
+          "name" : "expectedCredit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "actualCredit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "month",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_createCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_createCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : "create",
+    "type" : "com.elite.credit_line_details.AccountsAPI.CreditLineDetails",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_createCreditLineDetails",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "CreditLineDetails",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.CreditLineDetails",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.credit_line_details.AccountsAPI.CreditLineDetails" : [ {
+          "name" : "expectedCredit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "actualCredit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "month",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_exportCreditLineDetailsAndGetURL" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_exportCreditLineDetailsAndGetURL",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.StringWrapper",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_exportCreditLineDetailsAndGetURL",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/export",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "DataExportOptions",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.export.DataExportOptions",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/json" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_getCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_getCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.CreditLineDetails",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_getCreditLineDetails",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/{id}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_exportCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_exportCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.Downloadable",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_exportCreditLineDetails",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/export/{exportType}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "exportType",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.export.ExportType",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : [ "application/octet-stream" ],
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_filterCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_filterCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "com.elite.credit_line_details.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_filterCreditLineDetails",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_findCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_findCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : "list",
+    "type" : "com.elite.credit_line_details.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_findCreditLineDetails",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_countCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_countCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : null,
+    "type" : "integer",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_countCreditLineDetails",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/count",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_CreditLineDetailsController_deleteCreditLineDetails" : {
+    "id" : "AccountsAPI_CreditLineDetailsController_deleteCreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "service" : "AccountsAPI",
+    "controller" : "CreditLineDetailsController",
+    "operationType" : "delete",
+    "type" : "boolean",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CreditLineDetailsController_deleteCreditLineDetails",
+      "methodType" : "delete",
+      "relativePath" : "/AccountsAPI/AccountsDB/CreditLineDetails/{id}",
+      "directPath" : null,
+      "httpMethod" : "delete",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

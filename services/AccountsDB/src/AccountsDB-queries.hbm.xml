@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="getUserByEmail">
+        <![CDATA[
+        select * from corporate_user where email=:email
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getUserByEmail__count">
+        <![CDATA[
+        select count(*) from (select * from corporate_user where email=:email) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updateMultipleTransactionStatus">
+        <![CDATA[
+        update transaction t join account a on t.source_account_id = a.id set transaction_status_id = :statusId where t.id in (:ids) and a.corporate_id = :corporateId
+        ]]>
+    <query-param name="statusId" type="java.lang.Integer"/>
+    <query-param name="ids" type="java.lang.Integer"/>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getFrequentTransactions">
+        <![CDATA[
+        SELECT
+    COUNT(*) AS total_transactions,
+    MAX(date) AS last_transaction_date,
+    MIN(date) AS first_transaction_date,
+    AVG(amount) AS average_transaction_amount,
+    transaction_status_id,
+    transaction_type_id
+FROM transaction
+WHERE benericiary_id = :beneficiaryId
+GROUP BY benericiary_id, transaction_status_id, transaction_type_id
+        ]]>
+    <query-param name="beneficiaryId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getFrequentTransactions__count">
+        <![CDATA[
+        select count(*) from (SELECT
+    COUNT(*) AS total_transactions,
+    MAX(date) AS last_transaction_date,
+    MIN(date) AS first_transaction_date,
+    AVG(amount) AS average_transaction_amount,
+    transaction_status_id,
+    transaction_type_id
+FROM transaction
+WHERE benericiary_id = :beneficiaryId
+GROUP BY benericiary_id, transaction_status_id, transaction_type_id) wmTempTable
+        ]]>
+    <query-param name="beneficiaryId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMostFrequentTransactions">
+        <![CDATA[
+        SELECT
+    t.*,
+    a.name accountName,
+    b.name beneficiaryName,
+    COUNT(*) AS transaction_count
+FROM
+    transaction t
+JOIN
+    account a ON t.source_account_id = a.id
+JOIN
+    beneficiary b ON t.benericiary_id = b.id
+WHERE
+    a.corporate_id = :corporateId -- Replace :corporateId with the actual corporate ID you're interested in
+GROUP BY
+    t.benericiary_id
+ORDER BY
+    transaction_count DESC
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getMostFrequentTransactions__count">
+        <![CDATA[
+        select count(*) from (SELECT
+    t.*,
+    a.name accountName,
+    b.name beneficiaryName,
+    COUNT(*) AS transaction_count
+FROM
+    transaction t
+JOIN
+    account a ON t.source_account_id = a.id
+JOIN
+    beneficiary b ON t.benericiary_id = b.id
+WHERE
+    a.corporate_id = :corporateId -- Replace :corporateId with the actual corporate ID you're interested in
+GROUP BY
+    t.benericiary_id
+ORDER BY
+    transaction_count DESC) wmTempTable
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getAccountsSummaryByType">
+        <![CDATA[
+        SELECT
+    at.type,
+    SUM(CASE WHEN at.type = 'MF Summary' THEN a.amount_invested
+             WHEN at.type = 'FD Summary' THEN a.fd_amount
+             ELSE a.net_balance END) AS netBalance,
+    COUNT(a.id) AS totalAccounts
+FROM
+    account a
+INNER JOIN
+    account_type at ON at.id = a.account_type_id
+WHERE
+    a.corporate_id = :corporateId
+GROUP BY
+    a.account_type_id
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getAccountsSummaryByType__count">
+        <![CDATA[
+        select count(*) from (SELECT
+    at.type,
+    SUM(CASE WHEN at.type = 'MF Summary' THEN a.amount_invested
+             WHEN at.type = 'FD Summary' THEN a.fd_amount
+             ELSE a.net_balance END) AS netBalance,
+    COUNT(a.id) AS totalAccounts
+FROM
+    account a
+INNER JOIN
+    account_type at ON at.id = a.account_type_id
+WHERE
+    a.corporate_id = :corporateId
+GROUP BY
+    a.account_type_id) wmTempTable
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getOverallTransactions">
+        <![CDATA[
+        SELECT
+    COUNT(t.id) AS total_transactions,
+    SUM(t.amount) AS total_value
+FROM
+    transaction t join account a 
+    on t.source_account_id = a.id
+WHERE
+    WEEK(t.date) = WEEK(CURDATE())
+AND
+    YEAR(t.date) = YEAR(CURDATE())
+AND
+    a.corporate_id = :corporateId
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getOverallTransactions__count">
+        <![CDATA[
+        select count(*) from (SELECT
+    COUNT(t.id) AS total_transactions,
+    SUM(t.amount) AS total_value
+FROM
+    transaction t join account a 
+    on t.source_account_id = a.id
+WHERE
+    WEEK(t.date) = WEEK(CURDATE())
+AND
+    YEAR(t.date) = YEAR(CURDATE())
+AND
+    a.corporate_id = :corporateId) wmTempTable
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getTotalAccountBalanceForCorporate">
+        <![CDATA[
+        select sum(net_balance) as totalBalance from account where corporate_id = :corporateId group by corporate_id
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getTotalAccountBalanceForCorporate__count">
+        <![CDATA[
+        select count(*) from (select sum(net_balance) as totalBalance from account where corporate_id = :corporateId group by corporate_id) wmTempTable
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getTotalTransactions">
+        <![CDATA[
+        SELECT
+    ts.status,
+    COALESCE(COUNT(t.id), 0) AS total
+FROM
+    transaction_status ts
+LEFT JOIN
+    transaction t ON ts.id = t.transaction_status_id
+LEFT JOIN
+    account a ON t.source_account_id = a.id
+WHERE
+    a.corporate_id = :corporateId
+GROUP BY
+    ts.status
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getTotalTransactions__count">
+        <![CDATA[
+        select count(*) from (SELECT
+    ts.status,
+    COALESCE(COUNT(t.id), 0) AS total
+FROM
+    transaction_status ts
+LEFT JOIN
+    transaction t ON ts.id = t.transaction_status_id
+LEFT JOIN
+    account a ON t.source_account_id = a.id
+WHERE
+    a.corporate_id = :corporateId
+GROUP BY
+    ts.status) wmTempTable
+        ]]>
+    <query-param name="corporateId" type="java.lang.Integer"/>
+    </sql-query>
+</hibernate-mapping>

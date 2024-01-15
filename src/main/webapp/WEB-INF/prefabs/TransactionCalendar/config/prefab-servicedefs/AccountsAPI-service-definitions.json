@@ -1,0 +1,55 @@
+{
+  "AccountsAPI_TransactionController_filterTransactions" : {
+    "id" : "AccountsAPI_TransactionController_filterTransactions",
+    "crudOperationId" : "AccountsAPI.TransactionController",
+    "service" : "AccountsAPI",
+    "controller" : "TransactionController",
+    "operationType" : null,
+    "type" : "com.elite.transactioncalendar.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_TransactionController_filterTransactions",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Transaction/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

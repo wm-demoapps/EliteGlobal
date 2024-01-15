@@ -1,0 +1,79 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-container name="containerBgWrapper" class="border-radius-md bg-white  flex">
+        <wm-layoutgrid name="layoutgrid7">
+            <wm-gridrow name="gridrow16" height="100%">
+                <wm-gridcolumn columnwidth="3" name="gridcolumn20_1">
+                    <wm-container name="containerCorporateDetails" class="space-xl summer-bg bg-primary-2" backgroundrepeat="no-repeat" backgroundsize="cover" height="100%" backgroundposition="left">
+                        <wm-layoutgrid name="layoutgrid2">
+                            <wm-gridrow name="gridrow3">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn8" class="flex flex-v">
+                                    <wm-picture resizemode="contain" name="picture1" picturesource="resources/images/imagelists/user-circle.svg" class="picture-md"></wm-picture>
+                                    <wm-label padding="unset" name="label1" class="font-h3 text-white" caption="bind:Variables.svGetCorporateSummary.dataSet.corporate.name" margin="unset unset unset 8px"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow4">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                                    <wm-label padding="unset" name="label2" caption="Balance" class="h5  text-white-2" margin="38px unset 12px unset"></wm-label>
+                                    <wm-container name="container2" class="flex flex-v">
+                                        <wm-select dataset="USD,INR,RS" datafield="All Fields" name="select2" class="currency-select" placeholder="USD"></wm-select>
+                                        <wm-label padding="unset" name="label3" caption="bind:Variables.svGetCorporateSummary.dataSet.netAvailableBalance | toCurrency: '$'" class="font-lg text-white" margin="unset unset unset 16px"></wm-label>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="9" name="gridcolumn21" class="space-2xl" height="100%">
+                    <wm-layoutgrid name="layoutgrid8" height="100%">
+                        <wm-gridrow name="gridrow18" height="100%">
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn24" padding="unset 28px unset unset" class="b-dash-sepration">
+                                <wm-container name="container1Div">
+                                    <wm-label padding="unset" name="label4" caption="bind:Variables.svGetCorporateSummary.dataSet.netAvailableBalance | toCurrency: '$'" class="font-h1 text-black font-bold  text-ellipsis"></wm-label>
+                                </wm-container>
+                                <wm-container name="container5" margin="32px unset unset unset">
+                                    <wm-label padding="unset" name="label5" caption="Net Available Balance" class="font-h3 font-medium" width="100%"></wm-label>
+                                    <wm-container name="container12_1" margin="8px unset unset unset" display="flex">
+                                        <wm-label name="label6" caption="bind:(currDate | toDate: 'HH:mm') + '<span class=&quot;text-seperator&quot;>|</span>' + (currDate | toDate: 'dd MMM, yyyy')"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn28" padding="unset 28px" class="b-dash-sepration">
+                                <wm-container name="container2Div">
+                                    <wm-label padding="unset" caption="bind:Variables.svGetCorporateSummary.dataSet.availableLimit | toCurrency: '$'" name="label8" class="font-h1 text-black font-bold  text-ellipsis"></wm-label>
+                                </wm-container>
+                                <wm-container name="container8" margin="32px unset unset unset">
+                                    <wm-label padding="unset" caption="Available Limit" name="label9" class="font-h3 font-medium" width="100%"></wm-label>
+                                    <wm-container name="container14" display="flex" margin="8px unset unset unset">
+                                        <wm-label caption="bind:(currDate | toDate: 'HH:mm') + '<span class=&quot;text-seperator&quot;>|</span>' + (currDate | toDate: 'dd MMM, yyyy')" name="label10"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn29" padding="unset 28px" class="b-dash-sepration">
+                                <wm-container name="container3Div">
+                                    <wm-label padding="unset" caption="bind:Variables.svGetCorporateSummary.dataSet.allPayables | toCurrency: '$'" name="label12" class="font-h1 text-black font-bold  text-ellipsis"></wm-label>
+                                </wm-container>
+                                <wm-container name="container10" margin="32px unset unset unset">
+                                    <wm-label padding="unset" caption="All Payables" name="label13" width="100%" class="font-h3 font-medium"></wm-label>
+                                    <wm-container name="container15" display="flex" margin="8px unset unset unset">
+                                        <wm-label caption="bind:(currDate | toDate: 'HH:mm') + '<span class=&quot;text-seperator&quot;>|</span>' + (currDate | toDate: 'dd MMM, yyyy')" name="label14"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn25" padding="unset unset unset 28px">
+                                <wm-container name="container4Div">
+                                    <wm-label padding="unset" caption="bind:Variables.svGetCorporateSummary.dataSet.allReceivables | toCurrency: '$'" name="label16" class="font-h1 text-black font-bold  text-ellipsis"></wm-label>
+                                </wm-container>
+                                <wm-container name="container12" margin="32px unset unset unset">
+                                    <wm-label padding="unset" caption="All Receivables" name="label17" class="font-h3 font-medium" width="100%"></wm-label>
+                                    <wm-container name="container16" margin="8px unset unset unset">
+                                        <wm-label caption="bind:(currDate | toDate: 'HH:mm') + '<span class=&quot;text-seperator&quot;>|</span>' + (currDate | toDate: 'dd MMM, yyyy')" name="label18"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+</wm-prefab-container>

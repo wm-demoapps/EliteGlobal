@@ -1,0 +1,42 @@
+{
+  "stvLayoutFormat" : {
+    "_id" : "wm-stvLayoutFormat-wm.Variable-1702983562163",
+    "name" : "stvLayoutFormat",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "layout" : "oneColumn",
+      "icon" : "auro-single-col",
+      "class" : "col-1"
+    }, {
+      "layout" : "twoColumn",
+      "icon" : "auro-two-col",
+      "class" : "col-2"
+    }, {
+      "layout" : "threeColumn",
+      "icon" : "auro-three-col",
+      "class" : "col-3"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvWidgetConfig" : {
+    "_id" : "wm-stvWidgetConfig-wm.Variable-1703139573896",
+    "name" : "stvWidgetConfig",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "transactionCalendar" : true,
+      "creditLineChart" : true,
+      "rapidPay" : true
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

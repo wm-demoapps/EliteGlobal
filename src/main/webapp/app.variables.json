@@ -1,0 +1,266 @@
+{
+  "appNotification" : {
+    "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "list"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
+  "goToPage_AccountServices" : {
+    "_id" : "wm-goToPage_AccountServices-wm.NavigationVariable-1702960077760",
+    "name" : "goToPage_AccountServices",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "AccountServices",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Dashboard" : {
+    "_id" : "wm-goToPage_Dashboard-wm.NavigationVariable-1702959103487",
+    "name" : "goToPage_Dashboard",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Dashboard",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_InitiatePayment" : {
+    "_id" : "wm-goToPage_InitiatePayment-wm.NavigationVariable-1702960126934",
+    "name" : "goToPage_InitiatePayment",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "InitiatePayment",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Main" : {
+    "_id" : "wm-wm.NavigationVariable1389180517517",
+    "name" : "goToPage_Main",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "operation" : "gotoPage",
+    "pageName" : "Main"
+  },
+  "goToPage_Payments" : {
+    "_id" : "wm-goToPage_Payments-wm.NavigationVariable-1702960088089",
+    "name" : "goToPage_Payments",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Payments",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Settings" : {
+    "_id" : "wm-goToPage_Settings-wm.NavigationVariable-1703058877192",
+    "name" : "goToPage_Settings",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Settings",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Transactions" : {
+    "_id" : "wm-goToPage_Transactions-wm.NavigationVariable-1702960144861",
+    "name" : "goToPage_Transactions",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Transactions",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1702787259707",
+    "name" : "loggedInUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "loginAction" : {
+    "_id" : "wm-loginAction-wm.LoginVariable-1702787259706",
+    "name" : "loginAction",
+    "owner" : "App",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ ],
+    "dataSet" : { },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : true
+  },
+  "logoutAction" : {
+    "_id" : "wm-logoutAction-wm.LogoutVariable-1702787259706",
+    "name" : "logoutAction",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "Login",
+    "useDefaultSuccessHandler" : true
+  },
+  "stvBreadcrumbData" : {
+    "_id" : "wm-stvBreadcrumbData-wm.Variable-1703129267817",
+    "name" : "stvBreadcrumbData",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "label" : "Dashboard",
+      "icon" : "auro-home",
+      "link" : "#/Dashboard",
+      "id" : "Dashboard"
+    }, {
+      "label" : "Account Services",
+      "icon" : "auro-home",
+      "link" : "#/AccountServices",
+      "id" : "AccountServices"
+    }, {
+      "label" : "Payments",
+      "icon" : "auro-home",
+      "link" : "#/Payments",
+      "id" : "Payments",
+      "children" : [ {
+        "label" : "Initiate Payment",
+        "icon" : "",
+        "link" : "#/InitiatePayment",
+        "id" : "InitiatePayment"
+      } ]
+    }, {
+      "label" : "Transactions",
+      "icon" : "auro-home",
+      "link" : "#/Transactions",
+      "id" : "Transactions"
+    }, {
+      "label" : "Setup",
+      "icon" : "auro-home",
+      "link" : "#/Settings",
+      "id" : "Settings"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetCurrentCorporate" : {
+    "_id" : "wm-svGetCurrentCorporate-wm.ServiceVariable-1703176151806",
+    "name" : "svGetCurrentCorporate",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:Variables.svLoggedinUser.dataSet.corporateId",
+      "type" : "integer"
+    } ],
+    "type" : "c.accountsdb.Corporate",
+    "service" : "AccountsDB",
+    "operation" : "getCorporate",
+    "operationId" : "CorporateController_getCorporate",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Corporate"
+  },
+  "svLoggedinUser" : {
+    "_id" : "wm-svLoggedinUser-wm.ServiceVariable-1703164655628",
+    "name" : "svLoggedinUser",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "email",
+      "value" : "bind:Variables.loggedInUser.dataSet.name",
+      "type" : "string"
+    } ],
+    "type" : "com.showcase.elite.accountsdb.models.query.GetUserByEmailResponse",
+    "service" : "AccountsDB",
+    "operation" : "executeGetUserByEmail",
+    "operationId" : "QueryExecutionController_executeGetUserByEmail",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svThemeModes" : {
+    "_id" : "wm-svThemeModes-wm.Variable-1703647285650",
+    "name" : "svThemeModes",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "themeType" : "Pacific Blue",
+      "themeColor" : "#009DD7"
+    }, {
+      "themeType" : "Ruby Red",
+      "themeColor" : "#d40016"
+    }, {
+      "themeType" : "Blue Lotus",
+      "themeColor" : "#5D74F1"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

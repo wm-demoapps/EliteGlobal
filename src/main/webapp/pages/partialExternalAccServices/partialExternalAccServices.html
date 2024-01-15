@@ -1,0 +1,61 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow10_1" padding="unset unset 12px unset">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn17_1">
+                <wm-container name="container317" class="panel no-border  flex flex-v" padding="32px 24px" height="184px">
+                    <wm-layoutgrid name="layoutgrid517">
+                        <wm-gridrow name="gridrow1417">
+                            <wm-gridcolumn columnwidth="9" name="gridcolumn2417">
+                                <wm-layoutgrid name="layoutgrid617">
+                                    <wm-gridrow name="gridrow1517">
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn25_117">
+                                            <wm-label padding="unset" name="labelOverallAccountBalance" class="h4 text-muted" caption="Overall Account Balance"></wm-label>
+                                            <wm-container name="container1" margin="12px unset">
+                                                <wm-select name="select1" dataset="USD,INR,EUR" datafield="All Fields" datavalue="USD" class="header-select"></wm-select>
+                                            </wm-container>
+                                            <wm-label padding="unset" name="labelBalance" class="h1" caption="bind:getAccountBalance() | toCurrency: '$'"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn2617" padding="20px 20px unset 20px">
+                                            <wm-layoutgrid name="layoutgrid317">
+                                                <wm-gridrow name="gridrow817">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn1517" class="border-sep-left" padding="unset unset unset 32px">
+                                                        <wm-label padding="unset" name="labelNetAvlBalanceValue" class="h2" caption="bind:getAccountBalance() | toCurrency: '$'"></wm-label>
+                                                        <wm-label padding="unset" name="labelNetAvlBalance" class="h4 text-muted" caption="Net Available Balance" margin="8px unset unset unset"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn1617" horizontalalign="right" padding="unset 32px unset unset" class="border-sep-right">
+                                                        <wm-label padding="unset" name="labelAvblLimitValue" class="h2" caption="bind:'$'+'907,000'" margin="8px unset unset unset"></wm-label>
+                                                        <wm-label padding="unset" name="labelAvailableLimit" class="h4 text-muted" caption="Available Limit" margin="8px unset unset unset"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn2517" padding="unset unset unset 32px">
+                                <wm-layoutgrid name="layoutgrid4178">
+                                    <wm-gridrow name="gridrow12_718" padding="unset unset unset 20px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn2178"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                <wm-table statehandler="URL" name="AccountTable1" title="External Accounts" dataset="bind:Variables.dbGetAccounts.dataSet" navigation="Basic" showrowindex="true" height="300px" gridclass="table-hover table-striped">
+                    <wm-table-column binding="name" caption="Name" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="accountNo" caption="Account No" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="type" caption="Type" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="currency" caption="Currency" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="netBalance" caption="Net Balance" widget-type="label" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false">
+                        <wm-label caption="bind:row.getProperty('netBalance') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                    </wm-table-column>
+                </wm-table>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

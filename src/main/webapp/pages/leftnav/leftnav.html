@@ -1,0 +1,44 @@
+<wm-partial name="leftnav" type="leftnav">
+    <wm-nav name="leftnavigation" type="pills" layout="stacked">
+        <wm-nav-item name="list_dashboard">
+            <wm-anchor caption="Dashboard" name="dashboardLink" iconclass="auro-dashboard" on-click="Actions.goToPage_Dashboard.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_order">
+            <wm-anchor caption="Setup" name="orderLink" iconclass="auro-setting-icon" on-click="Actions.goToPage_Settings.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_inventory">
+            <wm-anchor caption="Account Services" name="inventoryLink" iconclass="auro-single-user" on-click="Actions.goToPage_AccountServices.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_support">
+            <wm-anchor caption="Payments" name="supportLink" iconclass="auro-account-bill" on-click="Actions.goToPage_Payments.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item5">
+            <wm-anchor name="anchor5" iconclass="auro-graph-stats" caption="Transactions" on-click="Actions.goToPage_Transactions.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item6">
+            <wm-anchor name="anchor6" iconclass="auro-compass-dir" caption="Direct Debit"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item7">
+            <wm-anchor name="anchor7" iconclass="auro-toolbox" caption="VAM"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item8">
+            <wm-anchor name="anchor8" iconclass="auro-tv" caption="RMS"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item9">
+            <wm-anchor name="anchor9" iconclass="auro-credit-card" caption="Positive Pay"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item10">
+            <wm-anchor name="anchor10" iconclass="auro-wallet" caption="LMS"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item11">
+            <wm-anchor name="anchor11" iconclass="auro-setting-slider" caption="FSCM"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item12">
+            <wm-anchor name="anchor12" iconclass="auro-branch" caption="FX Connect"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item13">
+            <wm-anchor name="anchor13" iconclass="auro-piechart" caption="Reports"></wm-anchor>
+        </wm-nav-item>
+    </wm-nav>
+    <wm-button class="btn-default collapse-btn text-primary" caption="" type="button" margin="unset" name="button1" iconclass="wi wi-keyboard-arrow-left" on-click="button1Click($event, widget)"></wm-button>
+</wm-partial>

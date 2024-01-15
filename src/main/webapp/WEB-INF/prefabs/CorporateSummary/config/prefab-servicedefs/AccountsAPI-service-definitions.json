@@ -1,0 +1,34 @@
+{
+  "AccountsAPI_CorporateSummaryController_getByCorporateId" : {
+    "id" : "AccountsAPI_CorporateSummaryController_getByCorporateId",
+    "crudOperationId" : "AccountsAPI.CorporateSummaryController",
+    "service" : "AccountsAPI",
+    "controller" : "CorporateSummaryController",
+    "operationType" : null,
+    "type" : "com.elite.corporatesummary.AccountsAPI.CorporateSummary",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_CorporateSummaryController_getByCorporateId",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/CorporateSummary/corporateId/{corporateId}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "corporateId",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

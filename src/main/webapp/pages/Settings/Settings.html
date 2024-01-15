@@ -1,0 +1,51 @@
+<wm-page pagetitle="Settings" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5_1">
+                        <wm-breadcrumb dataset="bind:Variables.stvBreadcrumbData.dataSet" class="attribute-based" name="breadcrumb1" itemid="id" itemlabel="label" itemicon="icon" itemlink="link" itemchildren="children"></wm-breadcrumb>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                        <wm-label padding="unset" name="label1" class="h1" caption="Accounts Configuration" margin="10px unset unset unset"></wm-label>
+                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-2 md-3 lg-3" class="media-list setting-list" datafield="All Fields" statehandler="URL" name="PartialAccountTypeMapppingList1"
+                            dataset="bind:Variables.dbPartialAccountTypeMapping.dataSet" navigation="None" title="">
+                            <wm-listtemplate layout="inline" name="listtemplate1">
+                                <wm-container name="container1">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow3" class="flex flex-v">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn5" horizontalalign="left" class="col-xs-9">
+                                                <wm-label padding="unset" name="label3" class="h3" caption="bind:Widgets.PartialAccountTypeMapppingList1.currentItem.accountType.type"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn6" horizontalalign="right" class="col-xs-3">
+                                                <wm-checkbox caption="Toggle" type="toggle" name="togglePreference" checkedvalue="true" uncheckedvalue="false" datavalue="bind:Widgets.PartialAccountTypeMapppingList1.currentItem.isActive" on-change="Variables.svUpdatePartialAccountTypePreference.invoke()"></wm-checkbox>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn6_2">
+                        <wm-label padding="unset" name="label1" class="h1" caption="Themes" margin="2em unset unset unset"></wm-label>
+                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-3 md-4 lg-4" class="media-list themes" statehandler="localStorage" name="svThemeModesList1" dataset="bind:Variables.svThemeModes.dataSet"
+                            navigation="None" title="" on-select="svThemeModesList1Select(widget, $data)" show="true" selectfirstitem="true">
+                            <wm-listtemplate layout="inline" name="listtemplate2">
+                                <wm-container class="media-body media-middle" name="container3" horizontalalign="center">
+                                    <wm-label name="Name" class="h3 font-normal" caption="bind:Variables.svThemeModes.dataSet[$i].themeType" fontunit="em" textalign="center"></wm-label>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

@@ -1,0 +1,97 @@
+<wm-page pagetitle="Dashboard" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-container name="container5" display="flex" class="flex-v">
+                            <wm-breadcrumb dataset="bind:Variables.stvBreadcrumbData.dataSet" class="attribute-based" name="breadcrumb1" itemid="id" itemlabel="label" itemicon="icon" itemlink="link" itemchildren="children"></wm-breadcrumb>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2" class="flex flex-v" padding="8px unset 16px unset">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn3">
+                        <wm-label padding="unset" name="label1" class="h1" caption="Dashboard"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn8_1" horizontalalign="right" class="flex flex-end">
+                        <wm-container name="containerToggle" display="flex" class="flex-v " margin="unset 8px">
+                            <wm-label class="font-h4" caption="Consolidated" name="label3" margin="unset 8px unset unset"></wm-label>
+                            <wm-container name="container3" display="inline-block" margin="unset unset unset 8px">
+                                <wm-checkbox caption="Toggle" type="toggle" datavalue="false" checkedvalue="true" uncheckedvalue="false" name="toggleConsolodatedView" margin="0px unset" width="48px" height="24px"></wm-checkbox>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="containerSwitch" display="inline-flex" class="col-md-2" margin="unset 8px">
+                            <wm-switch datavalue="col-3" name="switch1" dataset="bind:Variables.stvLayoutFormat.dataSet" datafield="class" iconclass="icon"></wm-switch>
+                        </wm-container>
+                        <wm-container name="containerButton1" display="inline-flex" class="border-right-container">
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 8px unset 12px" name="button4" iconclass="auro-user-sm"></wm-button>
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 8px" name="button1" iconclass="auro-two-col"></wm-button>
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 8px" name="button3" iconclass="auro-refresh"></wm-button>
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 12px unset 8px" name="button2" iconclass="auro-document"></wm-button>
+                        </wm-container>
+                        <wm-container name="containerButton2" display="inline-flex">
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 8px" name="button5" iconclass="auro-link"></wm-button>
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 8px" name="button7" iconclass="auro-circle-question"></wm-button>
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset 8px" name="button6" iconclass="auro-star"></wm-button>
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset" name="button8" iconclass="auro-setting-icon" hint="Configure Widgets" on-click="Widgets.dialogConfigureWidgets.open()"></wm-button>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                        <wm-prefab prefabname="CorporateSummary" name="CorporateSummary1" corporateid="bind:Variables.svLoggedinUser.dataSet.corporateId" show="bind:!Widgets.toggleConsolodatedView.datavalue"></wm-prefab>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn8_2" padding="20px unset unset unset">
+                        <wm-container name="containerFlexibleLayout" conditionalclass="bind:Widgets.switch1.datavalue" class="flexible-layout">
+                            <wm-container name="containerTransactionCalendar" show="bind:Variables.stvWidgetConfig.dataSet.transactionCalendar">
+                                <wm-prefab prefabname="TransactionCalendar" name="TransactionCalendar1" class="app-prefab panel" height="100%" corporateid="bind:Variables.svLoggedinUser.dataSet.corporateId"></wm-prefab>
+                            </wm-container>
+                            <wm-container name="containerCredit_Line_Details" show="bind:Variables.stvWidgetConfig.dataSet.creditLineChart">
+                                <wm-prefab prefabname="Credit_Line_Details" name="Credit_Line_Details1" class="app-prefab panel" height="100%"></wm-prefab>
+                            </wm-container>
+                            <wm-container name="containerRapid_pay" show="bind:Variables.stvWidgetConfig.dataSet.rapidPay">
+                                <wm-prefab prefabname="Rapid_pay" name="Rapid_pay1" height="100%" class="app-prefab panel" corporateid="bind:Variables.svLoggedinUser.dataSet.corporateId"></wm-prefab>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Configure Widgets" iconclass="" name="dialogConfigureWidgets">
+        <wm-dialogactions name="dialogactions1" show="false">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button9"></wm-button>
+        </wm-dialogactions>
+        <wm-layoutgrid name="layoutgrid3">
+            <wm-gridrow name="gridrow7" padding="unset unset 5px unset">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn10">
+                    <wm-label padding="unset" name="label7" class="h4" caption="Transactions Calendar"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn11" horizontalalign="right">
+                    <wm-checkbox caption="" type="toggle" class="col-md-push-3 col-md-9" checkedvalue="true" uncheckedvalue="false" datavalue="bind:Variables.stvWidgetConfig.dataSet.transactionCalendar" name="checkboxTransactionCalendar" on-change="checkboxTransactionCalendarChange($event, widget, newVal, oldVal)"></wm-checkbox>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow8" padding="unset unset 5px unset">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn12">
+                    <wm-label padding="unset" name="label8" class="h4" caption="Credit Line Chart"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn13" horizontalalign="right">
+                    <wm-checkbox caption="" type="toggle" class="col-md-push-3 col-md-9" checkedvalue="true" uncheckedvalue="false" datavalue="bind:Variables.stvWidgetConfig.dataSet.creditLineChart" name="checkboxCreditChart" on-change="checkboxCreditChartChange($event, widget, newVal, oldVal)"></wm-checkbox>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow9">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn14">
+                    <wm-label padding="unset" name="label9" class="h4" caption="Rapid Pay"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn15" horizontalalign="right">
+                    <wm-checkbox caption="" type="toggle" class="col-md-push-3 col-md-9" name="checkboxRapidPay" checkedvalue="true" uncheckedvalue="false" datavalue="bind:Variables.stvWidgetConfig.dataSet.rapidPay" on-change="checkboxRapidPayChange($event, widget, newVal, oldVal)"></wm-checkbox>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+</wm-page>

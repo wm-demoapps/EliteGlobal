@@ -1,0 +1,103 @@
+[ {
+  "name" : "AccountServices",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Dashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "InitiatePayment",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Payments",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Settings",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Transactions",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "partialAccountsSummary",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "corporateId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "partialCASAAccountServices",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "corporateId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "partialExternalAccServices",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "corporateId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "partialFDAccountServices",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "corporateId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "partialMFAccountServices",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "corporateId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "partialVirtualAccountServices",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "corporateId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "profilePopover",
+  "type" : "POPOVER",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

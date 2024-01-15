@@ -1,0 +1,7 @@
+{
+  "id" : "AccountsDB",
+  "type" : "DataService",
+  "packageNames" : [ "com.showcase.elite.accountsdb" ],
+  "title" : "AccountsDB",
+  "mockEnabled" : false
+}

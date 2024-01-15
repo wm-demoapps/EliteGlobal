@@ -1,0 +1,187 @@
+{
+  "dbPartialAccountTypeMapping" : {
+    "_id" : "wm-dbPartialAccountTypeMapping-wm.LiveVariable-1703061029116",
+    "name" : "dbPartialAccountTypeMapping",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "PartialAccountTypeMappping",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "AccountsDB",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "accountType",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "account_type_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : true,
+        "defaultValue" : "",
+        "relatedTableName" : "account_type",
+        "relatedEntityName" : "AccountType",
+        "relatedColumnName" : "accountTypeId",
+        "relatedFieldName" : "accountType.id",
+        "isList" : false,
+        "targetTable" : "account_type",
+        "scale" : 0,
+        "columns" : [ {
+          "fieldName" : "id",
+          "type" : "integer",
+          "fullyQualifiedType" : "integer",
+          "columnName" : "id",
+          "isPrimaryKey" : true,
+          "notNull" : true,
+          "length" : 0,
+          "precision" : 10,
+          "generator" : "identity",
+          "isRelated" : false,
+          "defaultValue" : "",
+          "scale" : 0
+        }, {
+          "fieldName" : "type",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "type",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 255,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
+          "scale" : 0
+        } ]
+      }, {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "partial",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "partial",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "isActive",
+        "type" : "boolean",
+        "fullyQualifiedType" : "boolean",
+        "columnName" : "is_active",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 1,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "PartialAccountTypeMappping",
+      "fullyQualifiedName" : "com.showcase.elite.accountsdb.PartialAccountTypeMappping",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "tableName" : "partial_account_type_mappping",
+    "tableType" : "TABLE",
+    "properties" : [ "accountType" ],
+    "relatedTables" : [ {
+      "columnName" : "accountType",
+      "relationName" : "accountType",
+      "type" : "AccountType",
+      "watchOn" : "AccountsDBAccountTypeData",
+      "package" : "com.showcase.elite.accountsdb.PartialAccountTypeMappping"
+    } ],
+    "filterFields" : { },
+    "filterExpressions" : { },
+    "package" : "com.showcase.elite.accountsdb.PartialAccountTypeMappping"
+  },
+  "nta_preferenceUpdated" : {
+    "_id" : "wm-nta_preferenceUpdated-wm.NotificationVariable-1703061363031",
+    "name" : "nta_preferenceUpdated",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Preference updated",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "1000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "svUpdatePartialAccountTypePreference" : {
+    "_id" : "wm-svUpdatePartialAccountTypePreference-wm.ServiceVariable-1703061056994",
+    "name" : "svUpdatePartialAccountTypePreference",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:Widgets.PartialAccountTypeMapppingList1.selecteditem.id",
+      "type" : "integer"
+    }, {
+      "target" : "PartialAccountTypeMappping.isActive",
+      "value" : "bind:Widgets.PartialAccountTypeMapppingList1.selectedItemWidgets.togglePreference.datavalue"
+    } ],
+    "type" : "com.showcase.elite.accountsdb.PartialAccountTypeMappping",
+    "service" : "AccountsDB",
+    "operation" : "patchPartialAccountTypeMappping",
+    "operationId" : "PartialAccountTypeMapppingController_patchPartialAccountTypeMappping",
+    "operationType" : "patch",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Actions.nta_preferenceUpdated.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "PartialAccountTypeMappping"
+  }
+}

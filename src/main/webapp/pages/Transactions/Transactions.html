@@ -1,0 +1,67 @@
+<wm-page pagetitle="Transactions" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-breadcrumb dataset="bind:Variables.stvBreadcrumbData.dataSet" class="attribute-based" name="breadcrumb1" itemid="id" itemlabel="label" itemicon="icon" itemlink="link" itemchildren="children"></wm-breadcrumb>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2" padding="24px unset 16px unset">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                        <wm-label padding="unset" name="label1" class="h1" caption="Transactions"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                        <wm-tabs type="static" statehandler="none" name="tab1">
+                            <wm-tabpane name="tabpane1" title="Pending Authorization">
+                                <wm-table statehandler="none" name="TransactionTable1" title="" dataset="bind:Variables.dbGetPendingTransactions.dataSet" navigation="Classic" radioselect="false" multiselect="true">
+                                    <wm-table-column binding="account.name" caption="Source Account" edit-widget-type="text" related-entity-name="Account" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="beneficiary.name" caption="Beneficiary Name" edit-widget-type="text" related-entity-name="Beneficiary" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="amount" caption="Amount" widget-type="label" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false">
+                                        <wm-label caption="bind:row.getProperty('amount') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                                    </wm-table-column>
+                                    <wm-table-column binding="date" caption="Date" edit-widget-type="date" show="true" type="date" generator="assigned" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="paymentMethod.method" caption="Payment Method" edit-widget-type="text" related-entity-name="PaymentMethod" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-action key="customButton" display-name="Approve" show="bind:Widgets.TransactionTable1.selecteditem.length > 0" class="btn-default" iconclass="" title="Approve" action="Variables.svApproveMultipleTransactions.invoke()" shortcutkey="" disabled="false"
+                                        position="header" widget-type="button"></wm-table-action>
+                                    <wm-table-action key="customButton1" display-name="Reject" title="Reject" value="" iconclass="" class="btn-default" show="bind:Widgets.TransactionTable1.selecteditem.length > 0" action="Variables.svRejectMultipleTransactions.invoke()" widget-type="button"
+                                        position="header" shortcutkey=""></wm-table-action>
+                                </wm-table>
+                            </wm-tabpane>
+                            <wm-tabpane name="tabpane2" title="Completed">
+                                <wm-table statehandler="none" name="TransactionTableCompleted" title="" dataset="bind:Variables.dbGetCompletedTransactions.dataSet" navigation="Classic">
+                                    <wm-table-column binding="account.name" caption="Source Account" edit-widget-type="text" related-entity-name="Account" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="beneficiary.name" caption="Beneficiary Name" edit-widget-type="text" related-entity-name="Beneficiary" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="amount" caption="Amount" widget-type="label" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false">
+                                        <wm-label caption="bind:row.getProperty('amount') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                                    </wm-table-column>
+                                    <wm-table-column binding="date" caption="Date" edit-widget-type="date" show="true" type="date" generator="assigned" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="paymentMethod.method" caption="Payment Method" edit-widget-type="text" related-entity-name="PaymentMethod" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="rowOperations" caption="Actions" width="120px" searchable="false" show="true" type="custom" readonly="true" sortable="false"></wm-table-column>
+                                    <wm-table-row-action key="customRow" display-name="Revert" show="true" class="btn-transparent" iconclass="" title="Revert" action="Variables.svRevertApproval.invoke()" disabled="false" widget-type="button"></wm-table-row-action>
+                                </wm-table>
+                            </wm-tabpane>
+                            <wm-tabpane name="tabpane3" title="Rejected">
+                                <wm-table statehandler="none" name="TransactionTableRejected" title="" dataset="bind:Variables.dbGetRejectedTransactions.dataSet" navigation="Classic">
+                                    <wm-table-column binding="account.name" caption="Source Account" edit-widget-type="text" related-entity-name="Account" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="beneficiary.name" caption="Beneficiary Name" edit-widget-type="text" related-entity-name="Beneficiary" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="amount" caption="Amount" widget-type="label" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false">
+                                        <wm-label caption="bind:row.getProperty('amount') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                                    </wm-table-column>
+                                    <wm-table-column binding="date" caption="Date" edit-widget-type="date" show="true" type="date" generator="assigned" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="paymentMethod.method" caption="Payment Method" edit-widget-type="text" related-entity-name="PaymentMethod" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                </wm-table>
+                            </wm-tabpane>
+                        </wm-tabs>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

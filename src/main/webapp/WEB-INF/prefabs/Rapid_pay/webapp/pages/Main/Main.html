@@ -1,0 +1,56 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1" class="flex flex-v">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn1" padding="8px">
+                <wm-container name="containerPanleHeader2" class="flex flex-v  panel-heading  border-bottom">
+                    <wm-container name="containerLabel2" height="100%" class="col-md-6" horizontalalign="left">
+                        <wm-label padding="unset" name="labelRapidPay" caption="Rapid Pay" class="h4 font-medium"></wm-label>
+                    </wm-container>
+                    <wm-container name="containerButtonIcon2" class="col-md-6" horizontalalign="right">
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button12" iconclass="auro-bargraph icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button22" iconclass="auro-refresh icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button32" iconclass="auro-eye icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button42" iconclass="aruo-frame icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button52" iconclass="auro-more-dot icon-xs"></wm-button>
+                    </wm-container>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                <wm-form errormessage="" captionposition="floating" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.mvRapidPayForm.dataSet" captionalign="left" name="mvRapidPayFormForm1" on-submit="Variables.swgCreateNewTransaction.invoke()"
+                    messagelayout="Toaster" postmessage="" class="rapid-pay-form">
+                    <wm-layoutgrid columns="1" name="layoutgrid2">
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn5_1" padding="unset unset 10px unset">
+                                <wm-form-field name="beneficiary" matchmode="startignorecase" show="true" placeholder="" type="string" key="beneficiary" widget="autocomplete" readonly="false" dataset="bind:Variables.swgGetBeneficiaries.dataSet" searchkey="name" displaylabel="bind:$[accountNo]+' - '+$[name]"
+                                    datafield="All Fields" class="border-bottom-form" displayname="Select Beneficiary"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                                <wm-label padding="unset" name="labelPayableAmount" caption="Payable Amount" class="h6 font-medium" margin="14px unset"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow4" padding="10px unset">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn6" padding="unset 12px unset unset">
+                                <wm-form-field name="currency" show="true" placeholder="" type="string" key="currency" widget="select" readonly="false" dataset="INR,USD,EUR,CAD" class="border-bottom-form" displayname="Currency"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn10" padding="unset unset unset 12px">
+                                <wm-form-field name="amount" show="true" placeholder="" type="string" key="amount" widget="number" inputtype="number" class="border-bottom-form" displayname="Amount"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn8" padding="10px unset">
+                                <wm-form-field name="debitAccount" show="true" placeholder="" type="string" key="debitAccount" widget="select" readonly="false" dataset="bind:Variables.swgGetAccountByCorpId.dataSet" displayexpression="bind:$[accountNo]+' - '+$[name]" datafield="All Fields"
+                                    class="border-bottom-form" displayname="Debit Account"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-transparent" iconclass="" title="Reset" disabled="false" widget-type="button" type="reset" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" display-name="Pay" show="true" class="form-save btn-primary" iconclass="" title="Pay" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+                </wm-form>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

@@ -1,0 +1,23 @@
+{
+  "displayName" : "TransactionCalendar",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "corporateid" : {
+      "type" : "string",
+      "displayName" : "Corporate Id",
+      "description" : "Corporate Id",
+      "bindable" : "in-bound",
+      "value" : "1",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : { },
+  "methods" : { }
+}

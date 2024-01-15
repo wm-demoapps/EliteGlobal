@@ -1,0 +1,57 @@
+<wm-partial name="header" type="header">
+    <wm-layoutgrid name="headerlayout">
+        <wm-gridrow name="headerrow" class="flex flex-v ">
+            <wm-gridcolumn name="headerleft" verticalalign="middle" columnwidth="2" class="flex flex-v space-between" padding="unset 10px unset unset">
+                <wm-picture picturesource="resources/images/imagelists/EliteGlobalLogo.svg" name="picture3" margin="unset 14px unset unset" class="app-logo" resizemode="contain"></wm-picture>
+                <wm-container name="container5_1" display="inline-block" class="border--left-header" horizontalalign="left" height="42.8px">
+                    <wm-label padding="7px 14px" caption="CORPORATE BANKING" class="text-secondary font-medium" width="auto" name="label6" textalign="center" show="false"></wm-label>
+                </wm-container>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn4">
+                <wm-select name="select2" placeholder="" class="header-select" dataset="Individual,Group" datafield="All Fields" datavalue="Individual"></wm-select>
+            </wm-gridcolumn>
+            <wm-gridcolumn name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="8" paddingunit="em" class="flex flex-v flex-end">
+                <wm-container name="container3" display="inline-flex" class="flex-v flex-h header-nav-wrapper  border-all" margin="unset 38px unset unset">
+                    <wm-container name="container4" display="block" horizontalalign="left">
+                        <wm-label padding="unset" name="label3" caption="bind:currDate | toDate: 'hh:mm a'" class="h4 block"></wm-label>
+                        <wm-label padding="unset" name="label4" caption="bind:currDate | toDate: 'dd-MMM-yyyy'" class="h6  text-muted block" margin="4px unset unset unset"></wm-label>
+                    </wm-container>
+                    <wm-nav type="pills" autoclose="outsideClick" name="nav1">
+                        <wm-nav-item name="nav_item1" class="border-left">
+                            <wm-anchor caption="" name="anchor1" iconclass="auro-search"></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item2">
+                            <wm-anchor caption="" name="anchor2" iconclass="auro-three-col"></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item3" class="border-right">
+                            <wm-anchor caption="" name="anchor3" iconclass="auro-share"></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item4">
+                            <wm-anchor name="anchor4" iconclass="auro-translate" caption=""></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item5">
+                            <wm-anchor name="anchor5" iconclass="auro-world" caption=""></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item6" class="border-right">
+                            <wm-anchor name="anchor6" iconclass="auro-circle-question" caption=""></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item7">
+                            <wm-anchor name="anchor7" iconclass="auro-bell" caption=""></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item8">
+                            <wm-anchor name="anchor8" iconclass="auro-email" caption=""></wm-anchor>
+                        </wm-nav-item>
+                        <wm-nav-item name="nav_item9">
+                            <wm-anchor name="anchor9" iconclass="auro-moon" caption=""></wm-anchor>
+                        </wm-nav-item>
+                    </wm-nav>
+                </wm-container>
+                <wm-container name="container5" display="flex" class="flex-v">
+                    <wm-picture resizemode="contain" name="picture2_1" picturesource="bind:Variables.svGetCurrentCorporate.dataSet.icon" margin="unset 10px unset unset" class="app-logo-sm" pictureplaceholder="resources/images/imagelists/default-image.png"></wm-picture>
+                    <wm-label padding="unset" name="label4_1" caption="bind:Variables.svLoggedinUser.dataSet.name" margin="unset 10px unset unset" class="h3"></wm-label>
+                    <wm-popover popoverwidth="80px" popoverheight="50px" name="popover1" caption="" iconurl="resources/images/imagelists/user-img.svg" class="user-popover" content="profilePopover"></wm-popover>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

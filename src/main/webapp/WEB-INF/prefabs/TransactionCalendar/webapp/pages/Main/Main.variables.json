@@ -1,0 +1,39 @@
+{
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetTransactions" : {
+    "_id" : "wm-svGetTransactions-wm.ServiceVariable-1702963990691",
+    "name" : "svGetTransactions",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "bind:Widgets.calendar1.selecteddates.start ? (\"date = '\" + formatDate(Widgets.calendar1.selecteddates.start) + \"' and account.corporateId = \" + corporateid) : ''",
+      "type" : "string"
+    } ],
+    "type" : "com.elite.transactioncalendar.AccountsAPI.Transaction",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_TransactionController_filterTransactions",
+    "operationId" : "AccountsAPI_TransactionController_filterTransactions",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Transaction"
+  }
+}

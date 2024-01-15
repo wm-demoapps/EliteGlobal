@@ -1,0 +1,39 @@
+{
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetCorporateSummary" : {
+    "_id" : "wm-svGetCorporateSummary-wm.ServiceVariable-1702958644511",
+    "name" : "svGetCorporateSummary",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "corporateId",
+      "value" : "bind:corporateid",
+      "type" : "integer"
+    } ],
+    "type" : "com.elite.corporatesummary.AccountsAPI.CorporateSummary",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_CorporateSummaryController_getByCorporateId",
+    "operationId" : "AccountsAPI_CorporateSummaryController_getByCorporateId",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "CorporateSummary"
+  }
+}

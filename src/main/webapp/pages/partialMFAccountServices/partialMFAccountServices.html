@@ -1,0 +1,55 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow12" padding="unset unset 12px unset">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn19_1">
+                <wm-container name="container232" class="panel no-border  flex flex-v" padding="32px 24px" height="184px">
+                    <wm-layoutgrid name="layoutgrid432">
+                        <wm-gridrow name="gridrow1132">
+                            <wm-gridcolumn columnwidth="9" name="gridcolumn18_132">
+                                <wm-layoutgrid name="layoutgrid532">
+                                    <wm-gridrow name="gridrow1332">
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn2232">
+                                            <wm-label padding="unset" name="labelTotalInvAmt" class="h4 text-muted" caption="Total Amount Invested"></wm-label>
+                                            <wm-container name="container1" margin="12px unset">
+                                                <wm-select name="select1" dataset="USD,INR,EUR" datafield="All Fields" datavalue="USD" class="header-select"></wm-select>
+                                            </wm-container>
+                                            <wm-label padding="unset" name="labelMFAmount" class="h1" caption="bind:getMFInvestAmount() | toCurrency: '$'"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn2332" padding="20px">
+                                            <wm-layoutgrid name="layoutgrid632">
+                                                <wm-gridrow name="gridrow1532">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn2732" class="border-sep-left" padding="unset unset unset 32px">
+                                                        <wm-label padding="unset" name="labelTotalAmountInvested" class="h2" caption="bind:getMFInvestAmount() | toCurrency: '$'"></wm-label>
+                                                        <wm-label padding="unset" name="labelTotalMFAmtInv" class="h4 text-muted" caption="Total Amount Invested" margin="8px unset unset unset"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn2832" class="border-sep-right" padding="unset 32px unset unset" horizontalalign="right">
+                                                        <wm-label padding="unset" name="labelAvblLimitValue" class="h2" caption="bind:'$'+'907,000'" show="false" margin="8px unset unset unset"></wm-label>
+                                                        <wm-label padding="unset" name="labelAvailableLimit" class="h4 text-muted" caption="Available Limit" show="false" margin="8px unset unset unset"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn2632"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                <wm-table statehandler="URL" name="AccountTable1" title="Mutual Fund Accounts" dataset="bind:Variables.dbGetAccounts.dataSet" navigation="Basic" showrowindex="true" exportformat="CSV" height="300px" gridclass="table-hover table-striped">
+                    <wm-table-column binding="folioNo" caption="Folio No" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="name" caption="Name" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fundManager" caption="Fund Manager" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fundHouse" caption="Fund House" edit-widget-type="text" show="true" type="string" generator="assigned" readonly="false"></wm-table-column>
+                    <wm-table-column binding="amountInvested" caption="Amount Invested" widget-type="label" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false">
+                        <wm-label caption="bind:row.getProperty('amountInvested') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                    </wm-table-column>
+                </wm-table>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

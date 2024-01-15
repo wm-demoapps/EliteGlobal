@@ -1,0 +1,295 @@
+<wm-page pagetitle="Initiate Payment" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-breadcrumb dataset="bind:Variables.stvBreadcrumbData.dataSet" class="attribute-based" name="breadcrumb1" itemid="id" itemlabel="label" itemicon="icon" itemlink="link" itemchildren="children"></wm-breadcrumb>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2" padding="8px unset 16px unset">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                        <wm-label padding="unset" name="label1" class="h1" caption="Initiate Payment"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                        <wm-wizard stepstyle="justified" class="number" name="wizardPaymentInitiate" on-done="wizardPaymentInitiateDone(widget, steps)" actionsalignment="right">
+                            <wm-wizardstep name="wizardstep1" iconclass="" title="Payment Details">
+                                <wm-liveform errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.dbCreateTransaction.dataSet" captionalign="left" captionposition="top" name="TransactionLiveForm1" on-beforeservicecall="TransactionLiveForm1Beforeservicecall($event, $operation, $data, options)"
+                                    on-success="Actions.nta_initiatePaymentSuccess.invoke();Variables.svUpdateAccountBalance.invoke()" corporateid="bind:Variables.svLoggedinUser.dataSet.corporateId">
+                                    <wm-layoutgrid columns="2" name="layoutgrid2">
+                                        <wm-gridrow name="gridrow8" padding="15px unset">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn43_3"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="8" name="gridcolumn11">
+                                                <wm-label padding="unset" name="label2" class="h3" caption="Payment Details"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn44_2"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow4">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn45_2"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                                                <wm-form-field name="date" displayname="Value Date" show="true" generator="assigned" placeholder="Select date" required="true" type="date" key="date" widget="date"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn8">
+                                                <wm-form-field name="paymentMethod" displayname="Payment Method" matchmode="startignorecase" show="true" is-related="true" generator="assigned" placeholder="" required="true" type="list" key="paymentMethod" widget="select" displayexpression="method" match="word"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn46_2"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow5">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn47_2"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="8" name="gridcolumn9">
+                                                <wm-form-field name="account" displayname="Debit from Account" matchmode="startignorecase" show="true" is-related="true" generator="assigned" placeholder="" required="true" type="list" key="account" widget="select" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;accountType.type&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;CASA&quot;,&quot;required&quot;:false,&quot;secondvalue&quot;:&quot;&quot;},{&quot;target&quot;:&quot;corporateId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;matchMode&quot;:&quot;exact&quot;,&quot;value&quot;:&quot;bind:Variables.svLoggedinUser.dataSet.corporateId&quot;,&quot;required&quot;:false,&quot;secondvalue&quot;:&quot;&quot;,&quot;isFirst&quot;:true}]}"
+                                                    displayexpression="name + ' ' + accountNo" match="word"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn48_1"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow9" padding="15px unset">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn49"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="8" name="gridcolumn13_1">
+                                                <wm-label padding="unset" class="h3" caption="Payable Amount" name="label3"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn50"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow7">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn51"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn12">
+                                                <wm-form-field name="amount" displayname="Amount" show="true" generator="assigned" placeholder="Enter value" required="true" type="integer" key="amount" widget="currency"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                                                <wm-form-field name="corporateRefNo" displayname="Corporate Ref No" show="true" generator="assigned" placeholder="Enter text" required="true" type="string" key="corporateRefNo" widget="text" maxchars="255" inputtype="text" readonly="false"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn52"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow1">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn53"></wm-gridcolumn>
+                                            <wm-gridcolumn name="gridcolumn1" columnwidth="8">
+                                                <wm-form-field name="description" displayname="Purpose of Payment" show="true" generator="assigned" placeholder="" required="true" type="string" key="description" widget="select" maxchars="255" dataset="Monthly Savings, Tax Payment, Business Purchase"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn55"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow1">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn56"></wm-gridcolumn>
+                                            <wm-gridcolumn name="gridcolumn1" columnwidth="8">
+                                                <wm-form-field name="paymentInstruction" displayname="Payment Instruction" show="true" generator="assigned" placeholder="Place your text" required="false" type="string" key="paymentInstruction" widget="textarea" maxchars="255"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn57_1"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                    <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" placeholder="Enter Number" required="true" type="integer" key="id" widget="number" inputtype="number" readonly="true" step="0"></wm-form-field>
+                                </wm-liveform>
+                            </wm-wizardstep>
+                            <wm-wizardstep name="wizardstep2" iconclass="" title="Beneficiary Details" on-next="wizardstep2Next(widget, currentStep, stepIndex)">
+                                <wm-layoutgrid name="layoutgrid8">
+                                    <wm-gridrow name="gridrow20">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn36">
+                                            <wm-container name="containerBeneficiaryPreSelection" show="bind:!Variables.stvSelectedBeneficiary.dataSet.id">
+                                                <wm-layoutgrid name="layoutgrid9">
+                                                    <wm-gridrow name="gridrow23" padding="52px" class="flex flex-v">
+                                                        <wm-gridcolumn columnwidth="5" name="gridcolumn41">
+                                                            <wm-container name="containeleftPanel" class="panel box-shadow" padding="20px" height="165px">
+                                                                <wm-layoutgrid name="layoutgrid10">
+                                                                    <wm-gridrow name="gridrow24" padding="30px unset unset unset">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn42">
+                                                                            <wm-label padding="unset" class="h4" caption="Select Beneficiary" name="label8"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow25" padding="30px unset">
+                                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn43">
+                                                                            <wm-label padding="unset" class="h4" caption="Beneficiary" name="label9"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="6" horizontalalign="right" name="gridcolumn44">
+                                                                            <wm-anchor caption="Select Beneficiary Name" name="anchorSelectBeneficiary" on-click="Widgets.dialogSelectBeneficiary.open()" iconclass="wi wi-keyboard-arrow-down fa-2x" iconposition="right" class="font-h4"></wm-anchor>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="2" horizontalalign="center" name="gridcolumn45">
+                                                            <wm-label padding="unset" class="h3" caption="OR" name="label10"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="5" name="gridcolumn46">
+                                                            <wm-container name="containerRightPanel" class="panel box-shadow" padding="20px" height="165px">
+                                                                <wm-layoutgrid name="layoutgrid11">
+                                                                    <wm-gridrow name="gridrow26">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn47">
+                                                                            <wm-label padding="unset" class="h4" caption="Add New Beneficiary" name="label11" margin="20px unset"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow27">
+                                                                        <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn48" padding="10px unset 16px unset">
+                                                                            <wm-button class="btn-outline-2 btn-block" caption="Add New Beneficiary" type="button" margin="unset" name="buttonAddBeneficiary" on-click="Widgets.dialogAddBeneficiary.open()"></wm-button>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow21">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn38">
+                                            <wm-container name="containerBenEmptyState" show="bind:!Variables.stvSelectedBeneficiary.dataSet.id" class="panel" horizontalalign="center" padding="52px unset">
+                                                <wm-picture resizemode="cover" name="picture1" picturesource="resources/images/imagelists/no-state-beneficiary.svg"></wm-picture>
+                                                <wm-label padding="unset" name="label20" class="h2" caption="Nothing Here Yet!" margin="30px unset unset unset"></wm-label>
+                                                <wm-label padding="unset" class="text-muted" caption="Select or Add a Beneficiary to Begin" name="label21_1" margin="10px unset"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow22">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn40">
+                                            <wm-container name="containerSelectedBeneficiary" show="bind:Variables.stvSelectedBeneficiary.dataSet.id">
+                                                <wm-layoutgrid name="layoutgrid10_1">
+                                                    <wm-gridrow name="gridrow25_1">
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn66"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn35" padding="32px unset">
+                                                            <wm-container name="containerBenDetails" class="panel box-shadow" padding="4em">
+                                                                <wm-layoutgrid name="layoutgrid12">
+                                                                    <wm-gridrow name="gridrow28">
+                                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn41_1">
+                                                                            <wm-label padding="unset" name="label15" class="h3" caption="bind:Variables.stvSelectedBeneficiary.dataSet.name" margin="8px unset"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn42_1">
+                                                                            <wm-label padding="unset" class="h3" caption="bind:&quot;IFSC: &quot; +&quot;<span class='text-muted-2'> &quot; + Variables.stvSelectedBeneficiary.dataSet.ifsc+&quot;</span>&quot;" name="label16_1" margin="8px unset"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow29">
+                                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn43_1">
+                                                                            <wm-label padding="unset" class="h3" caption="bind:&quot;Acc No: &quot; +&quot;<span class='text-muted-2'> &quot; +Variables.stvSelectedBeneficiary.dataSet.accountNo+&quot;</span>&quot;" name="label17_1" margin="8px unset unset unset"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn44_1">
+                                                                            <wm-anchor name="anchorChangeBeneficiary" caption="Change Beneficiary" on-click="anchorChangeBeneficiaryClick($event, widget)" class="font-h3" margin="8px unset unset unset"></wm-anchor>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn67"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-wizardstep>
+                            <wm-wizardstep name="wizardstep3" iconclass="" title="Review &amp; Confirm">
+                                <wm-layoutgrid name="layoutgrid12_1">
+                                    <wm-gridrow name="gridrow29_1">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn39" horizontalalign="center"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow30_1">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn41_2"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn43_2" horizontalalign="center"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn42_2"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow31_1">
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn59"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn60" padding="32px unset">
+                                            <wm-container name="containerReview" class="panel box-shadow" padding="4em">
+                                                <wm-layoutgrid name="layoutgrid13_1">
+                                                    <wm-gridrow name="gridrow32_2">
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn65_1"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn62_1" horizontalalign="center">
+                                                            <wm-container name="containerTotalAmount" class="bg-success space-lg border-radius-md">
+                                                                <wm-label padding="unset" name="label14" class="h2 text-white" caption="Amount"></wm-label>
+                                                                <wm-label padding="unset" class="h1 text-white" name="label15_1" caption="bind:Widgets.TransactionLiveForm1.formWidgets.amount.datavalue | toCurrency: '$'" margin="8px unset unset unset"></wm-label>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn64_1"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow33" padding="24px unset unset unset">
+                                                        <wm-gridcolumn columnwidth="5" name="gridcolumn64">
+                                                            <wm-label padding="unset" class="h5" caption="From" name="label16" margin="unset unset 10px unset"></wm-label>
+                                                            <wm-label padding="unset" class="h3" caption="bind:Widgets.TransactionLiveForm1.formWidgets.account.datavalue.name + ' : '+&quot;<span class='text-muted-2' style='margin-left:10px'> &quot; + Widgets.TransactionLiveForm1.formWidgets.account.datavalue.accountNo+&quot;</span>&quot;"
+                                                                name="label18"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn63_1" horizontalalign="center" padding="12px unset unset unset">
+                                                            <wm-icon name="icon1" iconclass="wi wi-arrow-right fa-2x"></wm-icon>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn65">
+                                                            <wm-label padding="unset" class="h5" caption="To" name="label17" margin="unset unset 10px unset"></wm-label>
+                                                            <wm-label padding="unset" class="h3" caption="bind:Variables.stvSelectedBeneficiary.dataSet.name" name="label19"></wm-label>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn61_1"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-wizardstep>
+                        </wm-wizard>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Select Beneficiary" iconclass="" name="dialogSelectBeneficiary">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-default" caption="Close" on-click="closeDialog()" name="button3"></wm-button>
+            <wm-button class="btn-primary" caption="Select" type="button" margin="unset" name="buttonSelectBeneficiaryFromList" disabled="bind:!Widgets.BeneficiaryList1.selecteditem.id" on-click="buttonSelectBeneficiaryFromListClick($event, widget);Widgets.dialogSelectBeneficiary.close()"></wm-button>
+        </wm-dialogactions>
+        <wm-layoutgrid name="layoutgrid14">
+            <wm-gridrow name="gridrow32">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn57">
+                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" name="BeneficiaryList1" dataset="bind:Variables.dbGetBeneficiaries.dataSet"
+                        navigation="None">
+                        <wm-listtemplate layout="inline" name="listtemplate1">
+                            <wm-container name="container6">
+                                <wm-layoutgrid name="layoutgrid15">
+                                    <wm-gridrow name="gridrow34" padding="10px unset 20px unset">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn61" horizontalalign="left">
+                                            <wm-label padding="unset" name="label21" class="h4" caption="bind:Widgets.BeneficiaryList1.currentItem.name"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn62" horizontalalign="right">
+                                            <wm-label padding="unset" class="h4" name="label22" caption="bind:&quot;IFSC: &quot; + Widgets.BeneficiaryList1.currentItem.ifsc"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow35">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn63" horizontalalign="left">
+                                            <wm-label padding="unset" class="h4" name="label23" caption="bind:&quot;Acc No: &quot; + Widgets.BeneficiaryList1.currentItem.accountNo"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-list>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Add New Beneficiary" iconclass="" name="dialogAddBeneficiary">
+        <wm-dialogactions name="dialogactions2" show="false">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button4"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.dbGetBeneficiaries.dataSet" captionalign="left" captionposition="top" name="BeneficiaryLiveForm1" insertmessage="Beneficiary added successfully" updatemessage=""
+            deletemessage="" messagelayout="Toaster" on-success="BeneficiaryLiveForm1Success($event, $operation, $data);Widgets.dialogAddBeneficiary.close()">
+            <wm-layoutgrid columns="1" name="layoutgrid13">
+                <wm-gridrow name="gridrow30">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn45_1">
+                        <wm-form-field name="name" displayname="Name" show="true" generator="assigned" placeholder="Enter Beneficiary Name" required="true" type="string" key="name" widget="text" maxchars="255" inputtype="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow31">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn46_1">
+                        <wm-form-field name="ifsc" displayname="IFSC" show="true" generator="assigned" placeholder="Enter IFSC" required="true" type="string" key="ifsc" widget="text" maxchars="255" inputtype="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow32_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn47_1">
+                        <wm-form-field name="accountNo" displayname="Account Number" show="true" generator="assigned" placeholder="Enter Account Number" required="true" type="string" key="accountNo" widget="text" maxchars="255" inputtype="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" placeholder="Enter Number" required="true" type="integer" key="id" widget="number" inputtype="number" readonly="true" step="0"></wm-form-field>
+            <wm-form-action key="reset" display-name="Close" show="true" class="btn-default" iconclass="" title="Close" action="Widgets.dialogAddBeneficiary.close()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save &amp; Select" show="true" class="btn-primary" iconclass="" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>

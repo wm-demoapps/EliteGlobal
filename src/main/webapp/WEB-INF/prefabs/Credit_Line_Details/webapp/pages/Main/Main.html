@@ -1,0 +1,26 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1" class="flex flex-v">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn1" padding="8px">
+                <wm-container name="containerPanleHeader3" class="flex flex-v  panel-heading  border-bottom">
+                    <wm-container name="containerLabel3" height="100%" class="col-md-6" horizontalalign="left">
+                        <wm-label padding="unset" name="labelCreditLineDetails" class="h4 font-medium" caption="Credit Line Details"></wm-label>
+                    </wm-container>
+                    <wm-container name="containerButtonIcon3" class="col-md-6" horizontalalign="right">
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button13" iconclass="auro-bargraph icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button23" iconclass="auro-refresh icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button33" iconclass="auro-eye icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button43" iconclass="aruo-frame icon-xs"></wm-button>
+                        <wm-button class="btn-transparent" caption="" type="button" margin="unset 5px" name="button53" iconclass="auro-more-dot icon-xs"></wm-button>
+                    </wm-container>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn3" padding="20px">
+                <wm-chart type="Column" title="" height="380px" iconclass="wi wi-bar-chart" name="chartCreditLineDetails" dataset="bind:Variables.swgGetCreditLineDetails.dataSet" yaxislabel="AMOUNT" xaxislabel="MONTHS" showlegend="hide" xaxisdatakey="month" yaxisdatakey="actualCredit,expectedCredit"
+                    customcolors="var(--brand-secondary),var(--brand-primary)"></wm-chart>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

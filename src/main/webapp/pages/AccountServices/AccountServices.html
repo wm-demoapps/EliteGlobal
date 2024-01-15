@@ -1,0 +1,40 @@
+<wm-page pagetitle="Account Services" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1" padding="unset unset 8px unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-breadcrumb dataset="bind:Variables.stvBreadcrumbData.dataSet" class="attribute-based" name="breadcrumb1" itemid="id" itemlabel="label" itemicon="icon" itemlink="link" itemchildren="children" padding="0px"></wm-breadcrumb>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2" padding="8px unset 16px unset">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                        <wm-label padding="unset" name="label1" class="h2" caption="Account Services"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4" horizontalalign="right"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3" padding="8px unset 12px unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                        <wm-container name="container1" content="partialAccountsSummary">
+                            <wm-param name="corporateId" value="bind:Variables.svLoggedinUser.dataSet.corporateId" type="integer"></wm-param>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4" padding="12px unset unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5_1">
+                        <wm-tabs type="dynamic" statehandler="none" name="tabs2" dataset="bind:Variables.dbGetActiveAccountTypes.dataSet" class="no-bg">
+                            <wm-repeat-template name="repeat_template1">
+                                <wm-tabpane name="tabpane4" title="bind:Variables.dbGetActiveAccountTypes.dataSet[$i].accountType.type" content="bind:Variables.dbGetActiveAccountTypes.dataSet[$i].partial">
+                                    <wm-param name="corporateId" value="bind:Variables.svLoggedinUser.dataSet.corporateId" type="integer"></wm-param>
+                                </wm-tabpane>
+                            </wm-repeat-template>
+                        </wm-tabs>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

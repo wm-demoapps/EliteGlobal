@@ -1,0 +1,2034 @@
+{
+  "AccountsAPI_BeneficiaryController_filterBeneficiaries" : {
+    "id" : "AccountsAPI_BeneficiaryController_filterBeneficiaries",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_filterBeneficiaries",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_countAccounts" : {
+    "id" : "AccountsAPI_AccountController_countAccounts",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "integer",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_countAccounts",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/count",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_exportAccounts" : {
+    "id" : "AccountsAPI_AccountController_exportAccounts",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Downloadable",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_exportAccounts",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/export/{exportType}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "exportType",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.export.ExportType",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : [ "application/octet-stream" ],
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_countBeneficiaries" : {
+    "id" : "AccountsAPI_BeneficiaryController_countBeneficiaries",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "integer",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_countBeneficiaries",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/count",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_TransactionTypeController_filterTransactionTypes" : {
+    "id" : "AccountsAPI_TransactionTypeController_filterTransactionTypes",
+    "crudOperationId" : "AccountsAPI.TransactionTypeController",
+    "service" : "AccountsAPI",
+    "controller" : "TransactionTypeController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_TransactionTypeController_filterTransactionTypes",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/TransactionType/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_TransactionController_createTransaction" : {
+    "id" : "AccountsAPI_TransactionController_createTransaction",
+    "crudOperationId" : "AccountsAPI.TransactionController",
+    "service" : "AccountsAPI",
+    "controller" : "TransactionController",
+    "operationType" : "create",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Transaction",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_TransactionController_createTransaction",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Transaction",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "Transaction",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Transaction",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Transaction" : [ {
+          "name" : "beneficiary",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "benericiaryId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "amount",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "date",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.sql.Date",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "account",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "transactionTypeId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "transactionStatusId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "description",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "paymentMethod",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.PaymentMethod",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "transactionStatus",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.TransactionStatus",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "paymentMethodId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "sourceAccountId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "paymentInstruction",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "transactionType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.TransactionType",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporateRefNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_editBeneficiary" : {
+    "id" : "AccountsAPI_BeneficiaryController_editBeneficiary",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : "update",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_editBeneficiary",
+      "methodType" : "put",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/{id}",
+      "directPath" : null,
+      "httpMethod" : "put",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Beneficiary",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Beneficiary",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Beneficiary" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "ifsc",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_searchBeneficiariesByQueryFilters" : {
+    "id" : "AccountsAPI_BeneficiaryController_searchBeneficiariesByQueryFilters",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_searchBeneficiariesByQueryFilters",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/search",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "QueryFilter",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.expression.QueryFilter",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.QueryFilter" : [ {
+          "name" : "attributeType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "attributeName",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "attributeValue",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Object",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "filterCondition",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_exportBeneficiaries" : {
+    "id" : "AccountsAPI_BeneficiaryController_exportBeneficiaries",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Downloadable",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_exportBeneficiaries",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/export/{exportType}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "exportType",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.export.ExportType",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : [ "application/octet-stream" ],
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_TransactionStatusController_filterTransactionStatuses" : {
+    "id" : "AccountsAPI_TransactionStatusController_filterTransactionStatuses",
+    "crudOperationId" : "AccountsAPI.TransactionStatusController",
+    "service" : "AccountsAPI",
+    "controller" : "TransactionStatusController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_TransactionStatusController_filterTransactionStatuses",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/TransactionStatus/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_deleteBeneficiary" : {
+    "id" : "AccountsAPI_BeneficiaryController_deleteBeneficiary",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : "delete",
+    "type" : "boolean",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_deleteBeneficiary",
+      "methodType" : "delete",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/{id}",
+      "directPath" : null,
+      "httpMethod" : "delete",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_createAccount" : {
+    "id" : "AccountsAPI_AccountController_createAccount",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : "create",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_createAccount",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "Account",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Account",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Account" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fundHouse",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "netBalance",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporateId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "currency",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporate",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Corporate",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountTypeId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "amountInvested",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "type",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.AccountType",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fundManager",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "folioNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdUpperLimit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdAmount",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdNumber",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_PaymentMethodController_filterPaymentMethods" : {
+    "id" : "AccountsAPI_PaymentMethodController_filterPaymentMethods",
+    "crudOperationId" : "AccountsAPI.PaymentMethodController",
+    "service" : "AccountsAPI",
+    "controller" : "PaymentMethodController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_PaymentMethodController_filterPaymentMethods",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/PaymentMethod/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_getAccount" : {
+    "id" : "AccountsAPI_AccountController_getAccount",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_getAccount",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/{id}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_getAccountAggregatedValues" : {
+    "id" : "AccountsAPI_AccountController_getAccountAggregatedValues",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_getAccountAggregatedValues",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/aggregations",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "AggregationInfo",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.model.AggregationInfo",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.AggregationInfo" : [ {
+          "name" : "filter",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "groupByFields",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.util.List",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "aggregations",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.util.List",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_findAssociatedTransactions" : {
+    "id" : "AccountsAPI_BeneficiaryController_findAssociatedTransactions",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_findAssociatedTransactions",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/{id}/transactions",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_exportBeneficiariesAndGetURL" : {
+    "id" : "AccountsAPI_BeneficiaryController_exportBeneficiariesAndGetURL",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.StringWrapper",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_exportBeneficiariesAndGetURL",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/export",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "DataExportOptions",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.export.DataExportOptions",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/json" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_searchAccountsByQueryFilters" : {
+    "id" : "AccountsAPI_AccountController_searchAccountsByQueryFilters",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_searchAccountsByQueryFilters",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/search",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "QueryFilter",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.expression.QueryFilter",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.QueryFilter" : [ {
+          "name" : "attributeType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "attributeName",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "attributeValue",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Object",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "filterCondition",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_getBeneficiaryAggregatedValues" : {
+    "id" : "AccountsAPI_BeneficiaryController_getBeneficiaryAggregatedValues",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_getBeneficiaryAggregatedValues",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/aggregations",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "AggregationInfo",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.model.AggregationInfo",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.AggregationInfo" : [ {
+          "name" : "filter",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "groupByFields",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.util.List",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "aggregations",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.util.List",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_editAccount" : {
+    "id" : "AccountsAPI_AccountController_editAccount",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : "update",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_editAccount",
+      "methodType" : "put",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/{id}",
+      "directPath" : null,
+      "httpMethod" : "put",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Account",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Account",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Account" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fundHouse",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "netBalance",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporateId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "currency",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporate",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Corporate",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountTypeId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "amountInvested",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "type",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.AccountType",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fundManager",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "folioNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdUpperLimit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdAmount",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdNumber",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_exportAccountsAndGetURL" : {
+    "id" : "AccountsAPI_AccountController_exportAccountsAndGetURL",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.StringWrapper",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_exportAccountsAndGetURL",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/export",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "DataExportOptions",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.wavemaker.runtime.data.export.DataExportOptions",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/json" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_findAccounts" : {
+    "id" : "AccountsAPI_AccountController_findAccounts",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : "list",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_findAccounts",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_filterAccounts" : {
+    "id" : "AccountsAPI_AccountController_filterAccounts",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_filterAccounts",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/filter",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : [ "application/x-www-form-urlencoded" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_findBeneficiaries" : {
+    "id" : "AccountsAPI_BeneficiaryController_findBeneficiaries",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : "list",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_findBeneficiaries",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_patchBeneficiary" : {
+    "id" : "AccountsAPI_BeneficiaryController_patchBeneficiary",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_patchBeneficiary",
+      "methodType" : "patch",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/{id}",
+      "directPath" : null,
+      "httpMethod" : "patch",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Beneficiary",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Beneficiary",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Beneficiary" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "ifsc",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_deleteAccount" : {
+    "id" : "AccountsAPI_AccountController_deleteAccount",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : "delete",
+    "type" : "boolean",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_deleteAccount",
+      "methodType" : "delete",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/{id}",
+      "directPath" : null,
+      "httpMethod" : "delete",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_createBeneficiary" : {
+    "id" : "AccountsAPI_BeneficiaryController_createBeneficiary",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : "create",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_createBeneficiary",
+      "methodType" : "post",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "Beneficiary",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Beneficiary",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Beneficiary" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "ifsc",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_BeneficiaryController_getBeneficiary" : {
+    "id" : "AccountsAPI_BeneficiaryController_getBeneficiary",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "service" : "AccountsAPI",
+    "controller" : "BeneficiaryController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_BeneficiaryController_getBeneficiary",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Beneficiary/{id}",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_findAssociatedTransactions" : {
+    "id" : "AccountsAPI_AccountController_findAssociatedTransactions",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_findAssociatedTransactions",
+      "methodType" : "get",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/{id}/transactions",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AccountsAPI_AccountController_patchAccount" : {
+    "id" : "AccountsAPI_AccountController_patchAccount",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "service" : "AccountsAPI",
+    "controller" : "AccountController",
+    "operationType" : null,
+    "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+    "wmServiceOperationInfo" : {
+      "name" : "AccountsAPI_AccountController_patchAccount",
+      "methodType" : "patch",
+      "relativePath" : "/AccountsAPI/AccountsDB/Account/{id}",
+      "directPath" : null,
+      "httpMethod" : "patch",
+      "parameters" : [ {
+        "name" : "id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Account",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.showcase.elite.accountsdb.Account",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.elite.rapid_pay.AccountsAPI.Account" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fundHouse",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "netBalance",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporateId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "currency",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "corporate",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.Corporate",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountTypeId",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "amountInvested",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "type",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "accountType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "com.elite.rapid_pay.AccountsAPI.AccountType",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fundManager",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "folioNo",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdUpperLimit",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdAmount",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "fdNumber",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Integer",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<wm-page pagetitle="Payments" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                        <wm-breadcrumb dataset="bind:Variables.stvBreadcrumbData.dataSet" class="attribute-based" name="breadcrumb1" itemid="id" itemlabel="label" itemicon="icon" itemlink="link" itemchildren="children"></wm-breadcrumb>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                        <wm-label padding="unset" name="labelPayments" caption="Payments" class="h1" margin="10px unset 20px unset"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn6" padding="unset 10px unset unset">
+                        <wm-tile class="bg-default h6" name="tile16" margin="unset unset 12px unset" on-click="Actions.goToPage_InitiatePayment.invoke()">
+                            <wm-container name="container36">
+                                <wm-label padding="unset" name="label146" class="font-h4 fonta-medium  block" caption="Payment Method Wise"></wm-label>
+                                <wm-label padding="unset" name="label156" caption="If you know the Payment Method then please click her to initate" margin="10px unset unset unset" class="lh-sm"></wm-label>
+                            </wm-container>
+                        </wm-tile>
+                        <wm-tile class="bg-default" name="tile26" margin="12px unset unset unset">
+                            <wm-container name="container3_16">
+                                <wm-label padding="unset" name="label16_16" class="font-h4 font-medium block" caption="Beneficiary Wise Payment"></wm-label>
+                                <wm-label padding="unset" name="label17_16" margin="10px unset unset unset" caption="If you know the Payment Method then please click her to initate" class=" lh-sm"></wm-label>
+                            </wm-container>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn10" padding="unset 10px">
+                        <wm-container name="container10" padding="32px 20px" class="bg-white border-radius-md">
+                            <wm-container name="container410" padding="unset unset 20px unset">
+                                <wm-layoutgrid name="layoutgrid210">
+                                    <wm-gridrow name="gridrow5_110">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn8_110">
+                                            <wm-label padding="unset" name="labelOverallTransactions" caption="Transactions (This week)" class="text-black font-h3 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow6_110" padding="8px unset unset unset">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn1010">
+                                            <wm-label name="label910" caption="bind:Variables.svTotalAccount.dataSet.totalBalance" class="block font-h4 text-muted-3 font-medium"></wm-label>
+                                            <wm-label padding="unset" name="labelTotalValue" margin="8px unset unset unset" caption="Total Value" class="block font-h4 text-muted-4 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn1110">
+                                            <wm-label padding="unset" name="label10_110" caption="bind:Variables.svGetOverallTransactions.firstRecord.totalTransactions" class="block font-h4 text-muted-3 font-medium"></wm-label>
+                                            <wm-label padding="unset" name="labelTotalNumber" caption="Total Number" margin="8px unset unset unset" class="block font-h4 text-muted-4 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                            <wm-container name="container510" class="border-top" padding="20px unset unset unset">
+                                <wm-layoutgrid name="layoutgrid310">
+                                    <wm-gridrow name="gridrow710">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn11_110">
+                                            <wm-label padding="unset" name="labelTransactionStatus" caption="Transaction Status (This Week)" class="text-black font-h3 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow810" padding="8px unset unset unset">
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn1310">
+                                            <wm-label padding="unset" name="label1610" caption="bind:Variables.svGetCompletedTransactions.dataSet.value" class="block font-h4 text-muted-3 font-medium"></wm-label>
+                                            <wm-label padding="unset" name="labelCompleted" caption="Completed" margin="8px unset unset unset" class="block font-h4 text-muted-4 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn1410">
+                                            <wm-label padding="unset" name="label1810" caption="bind:Variables.svGetPendingCountTransactions.dataSet.value
+" class="block font-h4 text-muted-3 font-medium"></wm-label>
+                                            <wm-label padding="unset" name="labelPending" caption="Pending" margin="8px unset unset unset" class="block font-h4 text-muted-4 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn14_110">
+                                            <wm-label padding="unset" name="label1710" caption="bind:Variables.svRejectedTransaction.dataSet.value" class="block font-h4 text-muted-3 font-medium"></wm-label>
+                                            <wm-label padding="unset" name="labelRejected" caption="Rejected" margin="8px unset unset unset" class="block font-h4 text-muted-4 font-medium"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn13" padding="unset 10px">
+                        <wm-liveform errormessage="" title="Quick Pay - IFT" iconclass="" defaultmode="Edit" dataset="bind:Variables.svCreateTransaction.dataSet" captionalign="left" captionposition="floating" name="TransactionLiveForm1" corporateid="bind:Variables.svGetCurrentCorporate.dataSet.id"
+                            on-beforeservicecall="TransactionLiveForm1Beforeservicecall($event, $operation, $data, options)" updatemessage="" deletemessage="" insertmessage="Transaction created successfully" on-success="Variables.dvGetRecentTransactions.listRecords();Variables.svGetFrequestTransactions.invoke();Variables.svGetOverallTransactions.invoke();Variables.svGetPendingCountTransactions.invoke();Widgets.TransactionLiveForm1.reset()"
+                            class="quick-pay-form">
+                            <wm-layoutgrid columns="1" name="layoutgrid7">
+                                <wm-gridrow name="gridrow15" padding="unset unset 8px unset">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn21_1" padding="unset 8px unset unset">
+                                        <wm-form-field name="currency" displayname="Currency" show="true" placeholder="" type="string" key="currency" widget="select" dataset="USD,EUR,INR" class="border-bottom-form"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn26" padding="unset unset unset 8px">
+                                        <wm-form-field name="amount" displayname="Amount" show="true" generator="assigned" placeholder="" required="true" type="integer" key="amount" widget="number" inputtype="number" step="0" class="border-bottom-form"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow16" padding="8px unset">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn22_1">
+                                        <wm-form-field name="account" displayname="Account" matchmode="startignorecase" show="true" is-related="true" generator="assigned" placeholder="" required="true" type="list" key="account" widget="select" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;accountType.type&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;CASA&quot;,&quot;required&quot;:false,&quot;secondvalue&quot;:&quot;&quot;},{&quot;target&quot;:&quot;corporateId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;matchMode&quot;:&quot;exact&quot;,&quot;value&quot;:&quot;bind:Variables.svGetCurrentCorporate.dataSet.id&quot;,&quot;required&quot;:false,&quot;secondvalue&quot;:&quot;&quot;,&quot;isFirst&quot;:true}]}"
+                                            displayexpression="name + ' - ' + accountNo" match="word" class="border-bottom-form"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow17" padding="8px unset unset unset" class="flex flex-v">
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn23" padding="unset 10px unset unset">
+                                        <wm-form-field name="beneficiary" displayname="Beneficiary" matchmode="startignorecase" show="true" is-related="true" generator="assigned" placeholder="" required="true" type="list" key="beneficiary" widget="select" displayexpression="name + ' - ' + accountNo"
+                                            match="word" class="border-bottom-form"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn25" padding="unset unset unset 10px">
+                                        <wm-button class="btn-primary full-width" caption="Pay" type="submit" margin="unset" name="buttonPay" height="34"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" placeholder="Enter Number" required="true" type="integer" key="id" widget="number" inputtype="number" readonly="true" step="0"></wm-form-field>
+                        </wm-liveform>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn10_1" padding="24px unset unset unset">
+                        <wm-tabs type="static" statehandler="URL" name="tabs1" class="no-bg">
+                            <wm-tabpane name="tabpane1" title="Frequent Transactions">
+                                <wm-table statehandler="URL" title="" dataset="bind:Variables.svGetFrequestTransactions.dataSet" navigation="Classic" name="table2" navigationalign="right" height="300px" gridclass="table-hover table-striped">
+                                    <wm-table-column binding="accountName" caption="Account Name" edit-widget-type="text" show="true" type="string" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="beneficiaryName" caption="Beneficiary Name" edit-widget-type="text" show="true" type="string" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="date" caption="Date" edit-widget-type="date" show="true" type="date" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="amount" caption="Amount" widget-type="label" edit-widget-type="number" show="true" type="long" readonly="false">
+                                        <wm-label caption="bind:row.getProperty('amount') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                                    </wm-table-column>
+                                    <wm-table-column binding="transactionCount" caption="Total Transactions" edit-widget-type="number" show="true" type="long" readonly="false"></wm-table-column>
+                                </wm-table>
+                            </wm-tabpane>
+                            <wm-tabpane name="tabpane2" title="Recent Transactions">
+                                <wm-table statehandler="URL" name="TransactionTable1" title="" dataset="bind:Variables.dvGetRecentTransactions.dataSet" navigation="Classic" navigationalign="right" height="300px" gridclass="table-hover table-striped">
+                                    <wm-table-column binding="account.name" caption="Account Name" edit-widget-type="text" related-entity-name="Account" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="beneficiary.name" caption="Beneficiary Name" edit-widget-type="text" related-entity-name="Beneficiary" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                    <wm-table-column binding="date" caption="Date" edit-widget-type="date" show="true" type="date" generator="assigned" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="amount" caption="Amount" widget-type="label" edit-widget-type="number" show="true" type="integer" generator="assigned" readonly="false">
+                                        <wm-label caption="bind:row.getProperty('amount') | toCurrency: '$'" class="" conditionalclass="" conditionalstyle=""></wm-label>
+                                    </wm-table-column>
+                                    <wm-table-column binding="paymentMethod.method" caption="Payment Method" edit-widget-type="text" related-entity-name="PaymentMethod" show="true" type="string" generator="assigned" readonly="true"></wm-table-column>
+                                </wm-table>
+                            </wm-tabpane>
+                        </wm-tabs>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

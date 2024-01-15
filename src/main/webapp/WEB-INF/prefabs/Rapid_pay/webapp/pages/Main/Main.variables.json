@@ -1,0 +1,325 @@
+{
+  "mvRapidPayForm" : {
+    "_id" : "wm-mvRapidPayForm-wm.Variable-1702898815161",
+    "name" : "mvRapidPayForm",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "beneficiary" : "",
+      "currency" : "",
+      "amount" : "",
+      "debitAccount" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "notificationTransactionFailure" : {
+    "_id" : "wm-notificationTransactionFailure-wm.NotificationVariable-1702964108820",
+    "name" : "notificationTransactionFailure",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Transaction Failed",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "2000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast",
+    "dataSet" : [ ]
+  },
+  "notificationTransactionSuccess" : {
+    "_id" : "wm-notificationTransactionSuccess-wm.NotificationVariable-1702964143103",
+    "name" : "notificationTransactionSuccess",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Transaction Success",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "2000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "swgCreateNewTransaction" : {
+    "_id" : "wm-swgCreateNewTransaction1-wm.ServiceVariable-1702960334065",
+    "name" : "swgCreateNewTransaction",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "Transaction.account",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.debitAccount.datavalue",
+      "type" : "com.elite.rapid_pay.AccountsAPI.Account"
+    }, {
+      "target" : "Transaction.beneficiary",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.beneficiary.datavalue",
+      "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary"
+    }, {
+      "target" : "Transaction.amount",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.amount.datavalue",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "Transaction.corporateRefNo",
+      "value" : "bind:corporateid",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "Transaction.paymentMethod",
+      "value" : "bind:Variables.swgFilterPaymentMethods.firstRecord",
+      "type" : "com.elite.rapid_pay.AccountsAPI.PaymentMethod"
+    }, {
+      "target" : "Transaction.paymentMethodId",
+      "value" : "bind:Variables.swgFilterPaymentMethods.firstRecord.id",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "Transaction.transactionStatus",
+      "value" : "bind:Variables.swgFilterTransactionStatuses.firstRecord",
+      "type" : "com.elite.rapid_pay.AccountsAPI.TransactionStatus"
+    }, {
+      "target" : "Transaction.transactionStatusId",
+      "value" : "bind:Variables.swgFilterTransactionStatuses.firstRecord.id",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "Transaction.transactionType",
+      "value" : "bind:Variables.swgFilterTransactionTypes.firstRecord",
+      "type" : "com.elite.rapid_pay.AccountsAPI.TransactionType"
+    }, {
+      "target" : "Transaction.transactionTypeId",
+      "value" : "bind:Variables.swgFilterTransactionTypes.firstRecord.id",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "Transaction.description",
+      "value" : "bind:''",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "Transaction.sourceAccountId",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.debitAccount.datavalue.id",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "Transaction.benericiaryId",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.beneficiary.datavalue.id",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "Transaction.date",
+      "value" : "bind:currentDate()",
+      "type" : "java.sql.Date"
+    } ],
+    "type" : "com.elite.rapid_pay.AccountsAPI.Transaction",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_TransactionController_createTransaction",
+    "operationId" : "AccountsAPI_TransactionController_createTransaction",
+    "operationType" : "create",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.swgPatchAccountDetails.invoke()",
+    "onError" : "Actions.notificationTransactionFailure.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Transaction"
+  },
+  "swgFilterPaymentMethods" : {
+    "_id" : "wm-swgFilterPaymentMethods-wm.ServiceVariable-1702962188562",
+    "name" : "swgFilterPaymentMethods",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "method='CASA'",
+      "type" : "string"
+    } ],
+    "type" : "com.elite.rapid_pay.AccountsAPI.PaymentMethod",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_PaymentMethodController_filterPaymentMethods",
+    "operationId" : "AccountsAPI_PaymentMethodController_filterPaymentMethods",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "PaymentMethod"
+  },
+  "swgFilterTransactionStatuses" : {
+    "_id" : "wm-swgFilterTransactionStatuses-wm.ServiceVariable-1702961636947",
+    "name" : "swgFilterTransactionStatuses",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "status='Pending'",
+      "type" : "string"
+    } ],
+    "type" : "com.elite.rapid_pay.AccountsAPI.TransactionStatus",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_TransactionStatusController_filterTransactionStatuses",
+    "operationId" : "AccountsAPI_TransactionStatusController_filterTransactionStatuses",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "TransactionStatus"
+  },
+  "swgFilterTransactionTypes" : {
+    "_id" : "wm-swgFilterTransactionTypes-wm.ServiceVariable-1702961660721",
+    "name" : "swgFilterTransactionTypes",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "type='Single'",
+      "type" : "string"
+    } ],
+    "type" : "com.elite.rapid_pay.AccountsAPI.TransactionType",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_TransactionTypeController_filterTransactionTypes",
+    "operationId" : "AccountsAPI_TransactionTypeController_filterTransactionTypes",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "TransactionType"
+  },
+  "swgGetAccountByCorpId" : {
+    "_id" : "wm-swgGetAccountByCorpId-wm.CrudVariable-1702899122284",
+    "name" : "swgGetAccountByCorpId",
+    "owner" : "Page",
+    "category" : "wm.CrudVariable",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+    "service" : "AccountsAPI",
+    "operation" : "Account",
+    "operationId" : "Account",
+    "crudOperationId" : "AccountsAPI.AccountController",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Account",
+    "dataBinding" : {
+      "list" : [ {
+        "target" : "q",
+        "value" : "bind:\"corporate.id=\"+corporateid +\" and accountType.type='CASA'\"",
+        "type" : "string"
+      } ]
+    }
+  },
+  "swgGetBeneficiaries" : {
+    "_id" : "wm-swgGetBeneficiaries-wm.CrudVariable-1702898936927",
+    "name" : "swgGetBeneficiaries",
+    "owner" : "Page",
+    "category" : "wm.CrudVariable",
+    "type" : "com.elite.rapid_pay.AccountsAPI.Beneficiary",
+    "service" : "AccountsAPI",
+    "operation" : "Beneficiary",
+    "operationId" : "Beneficiary",
+    "crudOperationId" : "AccountsAPI.BeneficiaryController",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Beneficiary",
+    "dataBinding" : { }
+  },
+  "swgPatchAccountDetails" : {
+    "_id" : "wm-swgPatchAccountDetails-wm.ServiceVariable-1702912653432",
+    "name" : "swgPatchAccountDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.debitAccount.datavalue.id",
+      "type" : "integer"
+    }, {
+      "target" : "Account.netBalance",
+      "value" : "bind:Widgets.mvRapidPayFormForm1.formWidgets.debitAccount.datavalue.netBalance-Widgets.mvRapidPayFormForm1.formWidgets.amount.datavalue"
+    } ],
+    "type" : "com.elite.rapid_pay.AccountsAPI.Account",
+    "service" : "AccountsAPI",
+    "operation" : "AccountsAPI_AccountController_patchAccount",
+    "operationId" : "AccountsAPI_AccountController_patchAccount",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Actions.notificationTransactionSuccess.invoke();swgPatchAccountDetailsonSuccess(variable, data, options)",
+    "onError" : "Actions.notificationTransactionFailure.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Account"
+  }
+}

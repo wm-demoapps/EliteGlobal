@@ -1,0 +1,588 @@
+{
+  "getAccountsSummaryByType" : {
+    "name" : "getAccountsSummaryByType",
+    "description" : "getAccountsSummaryByType",
+    "version" : "V2",
+    "queryString" : "SELECT\n    at.type,\n    SUM(CASE WHEN at.type = 'MF Summary' THEN a.amount_invested\n             WHEN at.type = 'FD Summary' THEN a.fd_amount\n             ELSE a.net_balance END) AS netBalance,\n    COUNT(a.id) AS totalAccounts\nFROM\n    account a\nINNER JOIN\n    account_type at ON at.id = a.account_type_id\nWHERE\n    a.corporate_id = :corporateId\nGROUP BY\n    a.account_type_id",
+    "countQueryString" : "select count(*) from (SELECT\n    at.type,\n    SUM(CASE WHEN at.type = 'MF Summary' THEN a.amount_invested\n             WHEN at.type = 'FD Summary' THEN a.fd_amount\n             ELSE a.net_balance END) AS netBalance,\n    COUNT(a.id) AS totalAccounts\nFROM\n    account a\nINNER JOIN\n    account_type at ON at.id = a.account_type_id\nWHERE\n    a.corporate_id = :corporateId\nGROUP BY\n    a.account_type_id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "corporateId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetAccountsSummaryByTypeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "type",
+        "fieldName" : "type",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "netBalance",
+        "fieldName" : "netBalance",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "totalAccounts",
+        "fieldName" : "totalAccounts",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getFrequentTransactions" : {
+    "name" : "getFrequentTransactions",
+    "description" : "Get Frequent Transactions",
+    "version" : "V2",
+    "queryString" : "SELECT\r\n    COUNT(*) AS total_transactions,\r\n    MAX(date) AS last_transaction_date,\r\n    MIN(date) AS first_transaction_date,\r\n    AVG(amount) AS average_transaction_amount,\r\n    transaction_status_id,\r\n    transaction_type_id\r\nFROM transaction\r\nWHERE benericiary_id = :beneficiaryId\r\nGROUP BY benericiary_id, transaction_status_id, transaction_type_id",
+    "countQueryString" : "select count(*) from (SELECT\r\n    COUNT(*) AS total_transactions,\r\n    MAX(date) AS last_transaction_date,\r\n    MIN(date) AS first_transaction_date,\r\n    AVG(amount) AS average_transaction_amount,\r\n    transaction_status_id,\r\n    transaction_type_id\r\nFROM transaction\r\nWHERE benericiary_id = :beneficiaryId\r\nGROUP BY benericiary_id, transaction_status_id, transaction_type_id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "beneficiaryId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetFrequentTransactionsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "total_transactions",
+        "fieldName" : "totalTransactions",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "last_transaction_date",
+        "fieldName" : "lastTransactionDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "first_transaction_date",
+        "fieldName" : "firstTransactionDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "average_transaction_amount",
+        "fieldName" : "averageTransactionAmount",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Double",
+          "list" : false
+        }
+      }, {
+        "name" : "transaction_status_id",
+        "fieldName" : "transactionStatusId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "transaction_type_id",
+        "fieldName" : "transactionTypeId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getMostFrequentTransactions" : {
+    "name" : "getMostFrequentTransactions",
+    "description" : "getMostFrequentTransactions",
+    "version" : "V2",
+    "queryString" : "SELECT\n    t.*,\n    a.name accountName,\n    b.name beneficiaryName,\n    COUNT(*) AS transaction_count\nFROM\n    transaction t\nJOIN\n    account a ON t.source_account_id = a.id\nJOIN\n    beneficiary b ON t.benericiary_id = b.id\nWHERE\n    a.corporate_id = :corporateId -- Replace :corporateId with the actual corporate ID you're interested in\nGROUP BY\n    t.benericiary_id\nORDER BY\n    transaction_count DESC",
+    "countQueryString" : "select count(*) from (SELECT\n    t.*,\n    a.name accountName,\n    b.name beneficiaryName,\n    COUNT(*) AS transaction_count\nFROM\n    transaction t\nJOIN\n    account a ON t.source_account_id = a.id\nJOIN\n    beneficiary b ON t.benericiary_id = b.id\nWHERE\n    a.corporate_id = :corporateId -- Replace :corporateId with the actual corporate ID you're interested in\nGROUP BY\n    t.benericiary_id\nORDER BY\n    transaction_count DESC) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "corporateId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetMostFrequentTransactionsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "id",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "date",
+        "fieldName" : "date",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "payment_method_id",
+        "fieldName" : "paymentMethodId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "source_account_id",
+        "fieldName" : "sourceAccountId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "benericiary_id",
+        "fieldName" : "benericiaryId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "amount",
+        "fieldName" : "amount",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "description",
+        "fieldName" : "description",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "corporate_ref_no",
+        "fieldName" : "corporateRefNo",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "transaction_status_id",
+        "fieldName" : "transactionStatusId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "transaction_type_id",
+        "fieldName" : "transactionTypeId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "payment_instruction",
+        "fieldName" : "paymentInstruction",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "accountName",
+        "fieldName" : "accountName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "beneficiaryName",
+        "fieldName" : "beneficiaryName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "transaction_count",
+        "fieldName" : "transactionCount",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getOverallTransactions" : {
+    "name" : "getOverallTransactions",
+    "description" : "Get total number and total value of overall transactions",
+    "version" : "V2",
+    "queryString" : "SELECT\r\n    COUNT(t.id) AS total_transactions,\r\n    SUM(t.amount) AS total_value\r\nFROM\r\n    transaction t join account a \r\n    on t.source_account_id = a.id\r\nWHERE\r\n    WEEK(t.date) = WEEK(CURDATE())\r\nAND\r\n    YEAR(t.date) = YEAR(CURDATE())\r\nAND\r\n    a.corporate_id = :corporateId",
+    "countQueryString" : "select count(*) from (SELECT\r\n    COUNT(t.id) AS total_transactions,\r\n    SUM(t.amount) AS total_value\r\nFROM\r\n    transaction t join account a \r\n    on t.source_account_id = a.id\r\nWHERE\r\n    WEEK(t.date) = WEEK(CURDATE())\r\nAND\r\n    YEAR(t.date) = YEAR(CURDATE())\r\nAND\r\n    a.corporate_id = :corporateId) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "corporateId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetOverallTransactionsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "total_transactions",
+        "fieldName" : "totalTransactions",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "total_value",
+        "fieldName" : "totalValue",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getTotalAccountBalanceForCorporate" : {
+    "name" : "getTotalAccountBalanceForCorporate",
+    "description" : "getTotalAccountBalanceForCorporate",
+    "version" : "V2",
+    "queryString" : "select sum(net_balance) as totalBalance from account where corporate_id = :corporateId group by corporate_id",
+    "countQueryString" : "select count(*) from (select sum(net_balance) as totalBalance from account where corporate_id = :corporateId group by corporate_id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "corporateId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetTotalAccountBalanceForCorporateResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "totalBalance",
+        "fieldName" : "totalBalance",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getTotalTransactions" : {
+    "name" : "getTotalTransactions",
+    "description" : "Total Number of Transactions",
+    "version" : "V2",
+    "queryString" : "SELECT\n    ts.status,\n    COALESCE(COUNT(t.id), 0) AS total\nFROM\n    transaction_status ts\nLEFT JOIN\n    transaction t ON ts.id = t.transaction_status_id\nLEFT JOIN\n    account a ON t.source_account_id = a.id\nWHERE\n    a.corporate_id = :corporateId\nGROUP BY\n    ts.status",
+    "countQueryString" : "select count(*) from (SELECT\n    ts.status,\n    COALESCE(COUNT(t.id), 0) AS total\nFROM\n    transaction_status ts\nLEFT JOIN\n    transaction t ON ts.id = t.transaction_status_id\nLEFT JOIN\n    account a ON t.source_account_id = a.id\nWHERE\n    a.corporate_id = :corporateId\nGROUP BY\n    ts.status) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "corporateId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetTotalTransactionsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "status",
+        "fieldName" : "status",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "total",
+        "fieldName" : "total",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getUserByEmail" : {
+    "name" : "getUserByEmail",
+    "description" : "getUserByEmail",
+    "version" : "V2",
+    "queryString" : "select * from corporate_user where email=:email",
+    "countQueryString" : "select count(*) from (select * from corporate_user where email=:email) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "email",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "johndoe@gmail.com",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.GetUserByEmailResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "id",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "name",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "profile_pic",
+        "fieldName" : "profilePic",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "username",
+        "fieldName" : "username",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "password",
+        "fieldName" : "password",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "corporate_id",
+        "fieldName" : "corporateId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "email",
+        "fieldName" : "email",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "updateMultipleTransactionStatus" : {
+    "name" : "updateMultipleTransactionStatus",
+    "description" : "updateMultipleTransactionStatus",
+    "version" : "V2",
+    "queryString" : "update transaction t join account a on t.source_account_id = a.id set transaction_status_id = :statusId where t.id in (:ids) and a.corporate_id = :corporateId",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "statusId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    }, {
+      "name" : "ids",
+      "type" : "integer",
+      "list" : true,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : [ "13", "14", "15" ],
+      "required" : true
+    }, {
+      "name" : "corporateId",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.showcase.elite.accountsdb.models.query.UpdateMultipleTransactionStatusRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  }
+}

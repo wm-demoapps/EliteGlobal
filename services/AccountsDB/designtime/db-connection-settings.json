@@ -1,0 +1,72 @@
+{
+  "username" : "{DBUsername}",
+  "password" : "7b6a43524a2324147b7e68783f50777e47367b6a3120",
+  "url" : "jdbc:mariadb://{DBHost}:{DBPort}/AccountsDB?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true",
+  "driverClass" : "org.mariadb.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "AccountsDB",
+  "packageName" : "com.showcase.elite.accountsdb",
+  "dbType" : "MySQL",
+  "host" : "{DBHost}",
+  "dbName" : "AccountsDB",
+  "port" : "{DBPort}",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "account",
+    "schema" : null
+  }, {
+    "table" : "account_type",
+    "schema" : null
+  }, {
+    "table" : "beneficiary",
+    "schema" : null
+  }, {
+    "table" : "corporate",
+    "schema" : null
+  }, {
+    "table" : "corporate_summary",
+    "schema" : null
+  }, {
+    "table" : "corporate_user",
+    "schema" : null
+  }, {
+    "table" : "credit_line_details",
+    "schema" : null
+  }, {
+    "table" : "partial_account_type_mappping",
+    "schema" : null
+  }, {
+    "table" : "payment_method",
+    "schema" : null
+  }, {
+    "table" : "transaction",
+    "schema" : null
+  }, {
+    "table" : "transaction_instruction",
+    "schema" : null
+  }, {
+    "table" : "transaction_status",
+    "schema" : null
+  }, {
+    "table" : "transaction_type",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : true,
+  "metadataDialect" : ""
+}

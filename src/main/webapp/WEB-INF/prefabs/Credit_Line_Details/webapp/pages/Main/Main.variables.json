@@ -1,0 +1,55 @@
+{
+  "colorVariable" : {
+    "_id" : "wm-colorVariable-wm.Variable-1703076718661",
+    "name" : "colorVariable",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "secondary",
+      "hexcode" : "blue"
+    }, {
+      "name" : "primary",
+      "hexcode" : "green"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "swgGetCreditLineDetails" : {
+    "_id" : "wm-swgGetCreditLineDetails-wm.CrudVariable-1702894391278",
+    "name" : "swgGetCreditLineDetails",
+    "owner" : "Page",
+    "category" : "wm.CrudVariable",
+    "type" : "com.elite.credit_line_details.AccountsAPI.CreditLineDetails",
+    "service" : "AccountsAPI",
+    "operation" : "CreditLineDetails",
+    "operationId" : "CreditLineDetails",
+    "crudOperationId" : "AccountsAPI.CreditLineDetailsController",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "CreditLineDetails",
+    "dataBinding" : { }
+  }
+}
