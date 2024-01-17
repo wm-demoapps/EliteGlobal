@@ -1,7 +1,7 @@
 # About
 Elite Global is a powerful and user-friendly corporate banking accounts aggregator designed to give businesses complete control and visibility over their finances. It goes beyond basic aggregation, offering comprehensive account management, powerful analytics, and intuitive customization to streamline financial operations and optimize decision-making.
 
-<a href="https://showcase.onwavemaker.com/Elite/" target="_blank">Click Here</a> for more details on Elite Global app
+<a href="https://showcase.onwavemaker.com/EliteGlobal/" target="_blank">Click Here</a> for more details on Elite Global app
 
 # Personas
 ## Corporate Manager
